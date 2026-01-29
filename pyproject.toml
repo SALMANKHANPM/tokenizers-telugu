@@ -1,0 +1,12 @@
+[project]
+name = "langid"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mistral-common>=1.9.0",
+    "sentencepiece>=0.2.1",
+    "tiktoken>=0.12.0",
+    "transformers>=5.0.0",
+]
