@@ -35,10 +35,8 @@ class TokenizerFactory:
         
     
 if __name__ == "__main__":
-    pass
-    # Usage
-    # tokenizer = TokenizerFactory.get_tokenizer(model_name="llama3")
-    # tokenizer.save_vocabulary()
-    # tokens = tokenizer.encode("ఎలా టైపు చెయ్యాలో వివరంగా తెలుసుకోండి, Hello, how are you?")
-    # for token in tokens:
-    #     print(tokenizer.decode([token]), token)
+    tokenizer = TokenizerFactory.get_tokenizer(model_name="mistral_sp")
+    tokenizer.save_vocabulary()
+    tokens = tokenizer.encode("ఎలా టైపు చెయ్యాలో వివరంగా తెలుసుకోండి, Hello, how are you?")
+    for token in tokens:
+        print(tokenizer.decode([token]), token)
