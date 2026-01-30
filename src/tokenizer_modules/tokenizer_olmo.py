@@ -1,14 +1,13 @@
 from __future__ import annotations
 
+import json
 import os
 from pathlib import Path
 from typing import List, Optional, Union
 
 from tokenizers import Tokenizer as BaseTokenizer
 from contextlib import contextmanager
-from pathlib import Path
-from typing import Generator
-
+from src.data.utils import vocabulary_path
 # from olmo_data import get_data_path, is_data_file
 
 # from .aliases import PathOrStr
@@ -31,17 +30,18 @@ class OLMoTokenizer:
         this setting has no effect.
     """
     @classmethod
-    def get_instance(cls):
+    def get_instance(cls, path: Path):
         global _INSTANCE
 
         if _INSTANCE is None:
-            _INSTANCE = cls.from_file(Path(__file__).parent.parent / "tokenizer-models" / "olmo" / "olmo_tokenizer.json")
+            _INSTANCE = cls.from_file(path)
             print(_INSTANCE)
         return _INSTANCE
 
     def __init__(
         self,
         base_tokenizer: BaseTokenizer,
+        path: Path,
         eos_token_id: Optional[int] = None,
         pad_token_id: Optional[int] = None,
         truncate_to: Optional[int] = None,
@@ -53,6 +53,10 @@ class OLMoTokenizer:
         self.pad_token_id = pad_token_id if pad_token_id is not None else eos_token_id
         self.truncate_to = truncate_to
         self.truncate_direction = truncate_direction
+        self.path = path
+        # Extract filename without extension and create vocab filename
+        tokenizer_name = path.stem.replace("_tokenizer", "")
+        self.save_path = vocabulary_path / f"{tokenizer_name}_vocab.json"
 
     @property
     def vocab_size(self) -> int:
@@ -107,7 +111,7 @@ class OLMoTokenizer:
         """
         base_tokenizer = BaseTokenizer.from_pretrained(identifier)
         eos_token_id = kwargs.pop("eos_token_id", base_tokenizer.get_vocab_size() - 1)
-        return cls(base_tokenizer, eos_token_id, **kwargs)
+        return cls(base_tokenizer, Path(identifier), eos_token_id, **kwargs)
 
     @classmethod
     def from_file(cls, filename: Path, **kwargs) -> OLMoTokenizer:
@@ -121,7 +125,7 @@ class OLMoTokenizer:
         """
         base_tokenizer = BaseTokenizer.from_file(str(filename))
         eos_token_id = kwargs.pop("eos_token_id", base_tokenizer.get_vocab_size() - 1)
-        return cls(base_tokenizer, eos_token_id, **kwargs)
+        return cls(base_tokenizer, filename, eos_token_id, **kwargs)
 
 
     def add_special_tokens(self, input_ids: List[int]) -> List[int]:
@@ -176,8 +180,19 @@ class OLMoTokenizer:
         """
         return self.base_tokenizer.decode(token_ids, skip_special_tokens=skip_special_tokens)
     
+    def tokenizer_name(self) -> str:
+        """Return the tokenizer name based on the path stem."""
+        return self.path.stem
+    
+    def save_vocabulary(self):
+        """Save the tokenizer vocabulary to a JSON file."""
+        with open(self.save_path, "w") as f:
+            json.dump(self.vocab, f, indent=2, ensure_ascii=False)
+    
 if __name__ == "__main__":
-    tokenizer = OLMoTokenizer.get_instance()
+    tokenizer = OLMoTokenizer.get_instance(path=Path(__file__).parent.parent / "tokenizer-models" / "olmo" / "olmo_tokenizer.json")
     tokens = tokenizer.encode("ఎలా టైపు చెయ్యాలో వివరంగా తెలుసుకోండి, Hello, how are you?")
     for token in tokens:
         print(tokenizer.decode([token]).strip(" "), token)
+        
+    tokenizer.save_vocabulary()

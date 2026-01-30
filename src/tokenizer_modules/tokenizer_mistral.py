@@ -7,6 +7,7 @@ from mistral_common.tokens.tokenizers.tekken import Tekkenizer
 from mistral_common.tokens.tokenizers.base import SpecialTokenPolicy
 
 from src.data.utils import vocabulary_path
+
 _INSTANCE = None
 
 class MistralTokenizer:
@@ -19,7 +20,7 @@ class MistralTokenizer:
     
     def __init__(self, model_path: Path):
         self.tokenizer = SentencePieceTokenizer(model_path)
-        self.save_path = vocabulary_path / f"{model_path.name}.json"
+        self.save_path = vocabulary_path / f"{model_path.name.rstrip("tokenizer.model")}vocab.json"
         
     def encode(self, s: str, bos: bool = True, eos: bool = True) -> List[int]:
         return self.tokenizer.encode(s, bos=bos, eos=eos)
@@ -44,7 +45,7 @@ class MistralTekkenizer:
     
     def __init__(self, model_path: Path):
         self.tokenizer = Tekkenizer.from_file(model_path)
-        self.save_path = vocabulary_path / f"{model_path.name}.json"
+        self.save_path = vocabulary_path / f"{model_path.name.rstrip("tokenizer.json")}vocab.json"
         
     def encode(self, s: str, bos: bool = True, eos: bool = True) -> List[int]:
         return self.tokenizer.encode(s, bos=bos, eos=eos)
@@ -65,11 +66,11 @@ class MistralTekkenizer:
     
 
 if __name__ == "__main__":
-    tekken_tokenizer = MistralTekkenizer.get_instance(path=Path(__file__).parent.parent / "tokenizer-models" / "mistral_small_tekken" / "mistral_tekken_tokenizer.json")
-    tokens = tekken_tokenizer.encode("ఎలా టైపు చెయ్యాలో వివరంగా తెలుసుకోండి, Hello, how are you?")
-    for token in tokens:
-        print(tekken_tokenizer.decode([token]), token)
-    tekken_tokenizer.save_vocabulary()
+    # tekken_tokenizer = MistralTekkenizer.get_instance(path=Path(__file__).parent.parent / "tokenizer-models" / "mistral_small_tekken" / "mistral_tekken_tokenizer.json")
+    # tokens = tekken_tokenizer.encode("ఎలా టైపు చెయ్యాలో వివరంగా తెలుసుకోండి, Hello, how are you?")
+    # for token in tokens:
+    #     print(tekken_tokenizer.decode([token]), token)
+    # tekken_tokenizer.save_vocabulary()
     
     sp_tokenizer = MistralTokenizer.get_instance(path=Path(__file__).parent.parent / "tokenizer-models" / "mistral_sp" / "mistral_sp_tokenizer.model")
     tokens_sp = sp_tokenizer.encode("ఎలా టైపు చెయ్యాలో వివరంగా తెలుసుకోండి, Hello, how are you?")

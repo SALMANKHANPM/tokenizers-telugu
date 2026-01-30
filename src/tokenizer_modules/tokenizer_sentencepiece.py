@@ -53,7 +53,7 @@ class SentencePieceTokenizer:
             f"#words: {self.n_words} - BOS ID: {self.bos_id} - EOS ID: {self.eos_id}"
         )
         assert self.sp_model.vocab_size() == self.sp_model.get_piece_size()
-        self.save_path = vocabulary_path / f"{model_path.name}.json"
+        self.save_path = vocabulary_path / f"{model_path.name.strip("tokenizer.model")}vocab.json"
 
     def encode(self, s: str, bos: bool = False, eos: bool = False) -> List[int]:
         """
@@ -104,3 +104,5 @@ if __name__ == "__main__":
     tokens = tokenizer.encode("ఎలా టైపు చెయ్యాలో వివరంగా తెలుసుకోండి", bos=False, eos=False)
     for token in tokens:
         print(tokenizer.decode([token]).strip(" "), token)
+        
+    tokenizer.save_vocabulary()

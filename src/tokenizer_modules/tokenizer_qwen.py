@@ -6,6 +6,7 @@
 """Tokenization classes for QWen."""
 
 import base64
+import json
 import logging
 import os
 from pathlib import Path
@@ -14,6 +15,8 @@ from typing import Collection, Dict, List, Set, Tuple, Union
 
 import tiktoken
 from transformers import PreTrainedTokenizer, AddedToken
+
+from src.data.utils import vocabulary_path
 
 logger = logging.getLogger(__name__)
 
@@ -75,6 +78,7 @@ class QWenTokenizer(PreTrainedTokenizer):
             token: index
             for index, token in SPECIAL_TOKENS
         }
+        self.save_path = vocabulary_path / "qwen_vocab.json"
 
         # try load extra vocab from file
         if extra_model_path is not None:
@@ -174,14 +178,14 @@ class QWenTokenizer(PreTrainedTokenizer):
                 raise ValueError("Adding unknown special tokens is not supported")
         return 0
 
-    def save_vocabulary(self, save_directory: str, **kwargs) -> Tuple[str]:
+    def save_vocabulary_model(self, save_directory: str = vocabulary_path, **kwargs) -> Tuple[str]:
         """
         Save only the vocabulary of the tokenizer (vocabulary).
 
         Returns:
             `Tuple(str)`: Paths to the files saved.
         """
-        file_path = os.path.join(save_directory, "qwen_tokenizer.model")
+        file_path = vocabulary_path / "qwen_vocab.json"
         with open(file_path, "w", encoding="utf8") as w:
             for k, v in self.mergeable_ranks.items():
                 line = base64.b64encode(k).decode("utf8") + " " + str(v) + "\n"
@@ -291,12 +295,24 @@ class QWenTokenizer(PreTrainedTokenizer):
         if skip_special_tokens:
             token_ids = [i for i in token_ids if i < self.eod_id]
         return self.tokenizer.decode(token_ids, errors=errors or self.errors)
+    
+    def get_vocabulary(self):
+        return {i: self.decode([i]) for i in range(self.tokenizer.n_vocab)}
+    
+    
+    
+    def save_vocabulary(self):
+        os.makedirs(self.save_path.parent, exist_ok=True)
+        with open(self.save_path, "w") as f:
+            json.dump(self.get_vocabulary(), f, indent=2, ensure_ascii=False)
+    
 
 if __name__ == "__main__":
     # Usage
     tokenizer = QWenTokenizer.get_instance(model_path=Path(__file__).parent.parent / "tokenizer-models" / "qwen" / "qwen_tokenizer.model")
     tokens = tokenizer.encode("ఎలా టైపు చెయ్యాలో వివరంగా తెలుసుకోండి, Hello, how are you?", return_bytes=False)
-    #tokens = tokenizer.convert_tokens_to_ids(tokens)
     print(tokens)
     for token in tokens:
         print(tokenizer.decode([token]), token)
+        
+    tokenizer.save_vocabulary()

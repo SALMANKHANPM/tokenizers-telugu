@@ -118,7 +118,7 @@ class Llama3Tokenizer:
             self.special_tokens["<|eot_id|>"],
         ]
         
-        self.save_path = vocabulary_path / f"{model_path.name}.json"
+        self.save_path = vocabulary_path / f"{model_path.name.rstrip("tokenizer.model")}vocab.json"
 
     def encode(
         self,
