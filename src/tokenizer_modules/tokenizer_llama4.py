@@ -183,7 +183,7 @@ class Llama4Tokenizer:
             self.special_tokens["<|eot|>"],
         ]
         
-        self.save_path = vocabulary_path / f"{model_path.name}.json"
+        self.save_path = vocabulary_path / f"{model_path.name.rstrip("tokenizer.model")}vocab.json"
 
     def encode(
         self,
@@ -292,7 +292,7 @@ class Llama4Tokenizer:
 if __name__ == "__main__":
     # Usage
     tokenizer = Llama4Tokenizer.get_instance(model_path=Path(__file__).parent.parent / "tokenizer-models" / "llama4" / "llama4_tokenizer.model")
-    tokens = tokenizer.encode("ఎలా టైపు చెయ్యాలో వివరంగా తెలుసుకోండి")
+    tokens = tokenizer.encode("ఎలా టైపు చెయ్యాలో వివరంగా తెలుసుకోండి", bos=True, eos=True)
     for token in tokens:
         print(tokenizer.decode([token]).strip(" "), token)
     tokenizer.save_vocabulary()
