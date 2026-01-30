@@ -186,7 +186,9 @@ class OLMoTokenizer:
     
     def save_vocabulary(self):
         """Save the tokenizer vocabulary to a JSON file."""
+        os.makedirs(self.save_path.parent, exist_ok=True)
         with open(self.save_path, "w") as f:
+            # Save vocab as-is (token_str -> token_id mapping)
             json.dump(self.vocab, f, indent=2, ensure_ascii=False)
     
 if __name__ == "__main__":
