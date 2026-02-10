@@ -5,7 +5,6 @@ from typing import List
 from mistral_common.tokens.tokenizers.sentencepiece import SentencePieceTokenizer
 from mistral_common.tokens.tokenizers.tekken import Tekkenizer
 from mistral_common.tokens.tokenizers.base import SpecialTokenPolicy
-import os
 from src.data.utils import vocabulary_path
 
 _INSTANCE = None
