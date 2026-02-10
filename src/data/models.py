@@ -8,6 +8,7 @@ from src.tokenizer_modules.tokenizer_olmo import OLMoTokenizer
 from src.tokenizer_modules.tokenizer_qwen import QWenTokenizer
 from src.tokenizer_modules.tokenizer_llama4 import Llama4Tokenizer
 from src.tokenizer_modules.tokenizer_llama3 import Llama3Tokenizer
+from src.tokenizer_modules.tokenizer_hf import HFTokenizer
 
 
 # tuple of (model_name, model_path, tokenizer class)
@@ -28,4 +29,5 @@ model_id = [
     ("o1", model_path / "openai" / "o200k_base_tokenizer.tiktoken", OpenAITokenizer), # o1,3,4 and gpt 5 uses 0200k_base
     ("gpt-4", model_path / "openai" / "cl100k_base_tokenizer.tiktoken", OpenAITokenizer), # gpt 4 and gpt 3 series uses cl100k_base
     ("text-davinci-003", model_path / "openai" / "p50k_base_tokenizer.tiktoken", OpenAITokenizer), # text-davinci and code models use p50k base
+    ("two-sutra", "TWO/sutra-mlt256-v2", HFTokenizer),
 ]
