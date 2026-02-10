@@ -45,6 +45,7 @@ class UnicodeLanguageIdentifier:
         
         token = token.removeprefix("\t")
         token = token.removesuffix("▁")
+        token = token.removesuffix("Ġ")
         if not token:
             return "INVALID"
         token = token[-1]
