@@ -5,7 +5,6 @@ from typing import List
 from mistral_common.tokens.tokenizers.sentencepiece import SentencePieceTokenizer
 from mistral_common.tokens.tokenizers.tekken import Tekkenizer
 from mistral_common.tokens.tokenizers.base import SpecialTokenPolicy
-
 from src.data.utils import vocabulary_path
 
 _INSTANCE = None
@@ -31,7 +30,8 @@ class MistralTokenizer:
     def get_vocabulary(self):
         return {i: self.decode([i]) for i in range(self.tokenizer.n_words)}
     
-    def save_vocabulary(self):  
+    def save_vocabulary(self):
+        os.makedirs(self.save_path.parent, exist_ok=True)  
         with open(self.save_path, "w") as f:
             json.dump(self.get_vocabulary(), f, indent=2, ensure_ascii=False)
     

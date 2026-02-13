@@ -3,7 +3,6 @@ from pathlib import Path
 from src.data.models import model_id
 from typing import List
 
-
 class TokenizerFactory:
     @classmethod
     def get_tokenizer(cls, model_name: str):
@@ -33,7 +32,7 @@ class TokenizerFactory:
         with open(self.save_path, "w") as f:
             json.dump(self.tokenizer.vocab, f, indent=2, ensure_ascii=False)
         
-    
+
 if __name__ == "__main__":
     tokenizer = TokenizerFactory.get_tokenizer(model_name="mistral_sp")
     tokenizer.save_vocabulary()
