@@ -1,4 +1,3 @@
-from pathlib import Path
 from src.data.utils import model_path
 
 from src.tokenizer_modules.tokenizer_openai import OpenAITokenizer

@@ -3,7 +3,6 @@ from pathlib import Path
 from src.data.models import model_id
 from typing import List
 
-
 class TokenizerFactory:
     @classmethod
     def get_tokenizer(cls, model_name: str):
