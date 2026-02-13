@@ -221,9 +221,8 @@ class QWenTokenizer(PreTrainedTokenizer):
         """
         self.return_bytes = return_bytes
         tokens = []
-        print(text)
         text = unicodedata.normalize("NFC", text)
-        print("afer normalize", text)
+        
 
 
         # this implementation takes a detour: text -> token id -> token surface forms

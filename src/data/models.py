@@ -16,7 +16,7 @@ model_id = [
     ("llama4", model_path / "llama4" / "llama4_tokenizer.model", Llama4Tokenizer),
     ("llama3", model_path / "llama3" / "llama3_tokenizer.model", Llama3Tokenizer),
     ("llama2", model_path / "llama2" / "llama2_tokenizer.model", SentencePieceTokenizer),
-    ("ministral", model_path / "ministral" / "ministral_tekken_tokenizer.json", MistralTokenizer),
+    ("ministral", model_path / "ministral" / "ministral_tekken_tokenizer.json", MistralTekkenizer),
     ("mistral_small_tekken", model_path / "mistral_small_tekken" / "mistral_tekken_tokenizer.json", MistralTekkenizer),
     ("mistral_sp", model_path / "mistral_sp" / "mistral_sp_tokenizer.model", MistralTokenizer),
     ("olmo", model_path / "olmo" / "olmo_tokenizer.json", OLMoTokenizer),
