@@ -9,7 +9,6 @@ from src.tokenizer_modules.tokenizer_llama4 import Llama4Tokenizer
 from src.tokenizer_modules.tokenizer_llama3 import Llama3Tokenizer
 from src.tokenizer_modules.tokenizer_hf import HFTokenizer
 
-
 # tuple of (model_name, model_path, tokenizer class)
 model_id = [
     ("gemma", model_path / "gemma" / "gemma_tokenizer.model", SentencePieceTokenizer),
@@ -23,10 +22,10 @@ model_id = [
     ("olmo", model_path / "olmo" / "olmo_tokenizer.json", OLMoTokenizer),
     ("qwen", model_path / "qwen" / "qwen_tokenizer.model", QWenTokenizer),
     ("sarvam1", model_path / "sarvam1" / "sarvam1_tokenizer.model", SentencePieceTokenizer),
-    ("sarvam-mini", model_path / "sarvam-mini" / "sarvam-mini_tokenizer.model", SentencePieceTokenizer),
     ("gpt-oss", model_path / "openai" / "o200k_base_tokenizer.tiktoken", OpenAITokenizer),
-    ("o1", model_path / "openai" / "o200k_base_tokenizer.tiktoken", OpenAITokenizer), # o1,3,4 and gpt 5 uses 0200k_base
-    ("gpt-4", model_path / "openai" / "cl100k_base_tokenizer.tiktoken", OpenAITokenizer), # gpt 4 and gpt 3 series uses cl100k_base
-    ("text-davinci-003", model_path / "openai" / "p50k_base_tokenizer.tiktoken", OpenAITokenizer), # text-davinci and code models use p50k base
-    ("two-sutra", "TWO/sutra-mlt256-v2", HFTokenizer),
+    ("o200k_base", model_path / "openai" / "o200k_base_tokenizer.tiktoken", OpenAITokenizer), # o1,3,4 and gpt 5 uses 0200k_base
+    ("cl100k_base", model_path / "openai" / "cl100k_base_tokenizer.tiktoken", OpenAITokenizer),
+    ("p50k_base", model_path / "openai" / "p50k_base_tokenizer.tiktoken", OpenAITokenizer),
+    ("tiny-aya", "CohereLabs/tiny-aya-global", HFTokenizer),
+    ("TWO/sutra-mlt256-v2", "TWO/sutra-mlt256-v2", HFTokenizer),
 ]
