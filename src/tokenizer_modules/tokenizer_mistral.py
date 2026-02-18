@@ -23,17 +23,21 @@ class MistralTokenizer:
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}(vocab_size={self.tokenizer.n_words})"
 
-    def encode(self, s: str, bos: bool = True, eos: bool = True) -> List[int]:
-        return self.tokenizer.encode(s, bos=bos, eos=eos)
+    def encode(self, s: str, add_special_tokens: bool = False) -> List[int]:
+        return self.tokenizer.encode(s, bos=add_special_tokens, eos=add_special_tokens)
 
-    def encode_batch(self, texts: List[str]) -> List[List[int]]:
-        return [self.encode(text) for text in texts]
-    
-    def decode(self, t: List[int]) -> str:
-        return self.tokenizer.decode(t, special_token_policy=SpecialTokenPolicy.KEEP)
+    def encode_batch(self, texts: List[str], add_special_tokens: bool = False) -> List[List[int]]:
+        return [self.encode(text, add_special_tokens=add_special_tokens) for text in texts]
+
+    def decode_batch(self, batch: List[List[int]], skip_special_tokens: bool = True) -> List[str]:
+        return [self.decode(t, skip_special_tokens=skip_special_tokens) for t in batch]
+
+    def decode(self, t: List[int], skip_special_tokens: bool = True) -> str:
+        policy = SpecialTokenPolicy.IGNORE if skip_special_tokens else SpecialTokenPolicy.KEEP
+        return self.tokenizer.decode(t, special_token_policy=policy)
     
     def get_vocabulary(self):
-        return {i: self.decode([i]) for i in range(self.tokenizer.n_words)}
+        return {i: self.decode([i], skip_special_tokens=False) for i in range(self.tokenizer.n_words)}
     
     def save_vocabulary(self):
         os.makedirs(self.save_path.parent, exist_ok=True)  
@@ -56,15 +60,19 @@ class MistralTekkenizer:
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}(vocab_size={self.tokenizer.n_words})"
 
-    def encode(self, s: str, bos: bool = True, eos: bool = True) -> List[int]:
-        return self.tokenizer.encode(s, bos=bos, eos=eos)
+    def encode(self, s: str, add_special_tokens: bool = False) -> List[int]:
+        return self.tokenizer.encode(s, bos=add_special_tokens, eos=add_special_tokens)
 
-    def encode_batch(self, texts: List[str]) -> List[List[int]]:
-        return [self.encode(text) for text in texts]
-    
-    def decode(self, t: List[int]) -> str:
-        return self.tokenizer.decode(t, special_token_policy=SpecialTokenPolicy.KEEP)
-    
+    def encode_batch(self, texts: List[str], add_special_tokens: bool = False) -> List[List[int]]:
+        return [self.encode(text, add_special_tokens=add_special_tokens) for text in texts]
+
+    def decode_batch(self, batch: List[List[int]], skip_special_tokens: bool = True) -> List[str]:
+        return [self.decode(t, skip_special_tokens=skip_special_tokens) for t in batch]
+
+    def decode(self, t: List[int], skip_special_tokens: bool = True) -> str:
+        policy = SpecialTokenPolicy.IGNORE if skip_special_tokens else SpecialTokenPolicy.KEEP
+        return self.tokenizer.decode(t, special_token_policy=policy)
+
     def get_vocabulary(self):
         vocabulary = {}
         for i in range(self.tokenizer.n_words):

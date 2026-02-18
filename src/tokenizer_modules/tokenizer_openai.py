@@ -79,13 +79,16 @@ class OpenAITokenizer:
     def model_to_encoding(model_name: str) -> str | None:
         return MODEL_MAPPING.get(model_name)
 
-    def encode(self, text: str) -> List[int]:
+    def encode(self, text: str, add_special_tokens: bool = False) -> List[int]:
         return self.tokenizer.encode(text)
 
-    def encode_batch(self, texts: List[str]) -> List[List[int]]:
-        return [self.encode(text) for text in texts]
+    def encode_batch(self, texts: List[str], add_special_tokens: bool = False) -> List[List[int]]:
+        return [self.encode(text, add_special_tokens=add_special_tokens) for text in texts]
 
-    def decode(self, token_ids: List[int]) -> str:
+    def decode_batch(self, batch: List[List[int]], skip_special_tokens: bool = True) -> List[str]:
+        return [self.decode(token_ids, skip_special_tokens=skip_special_tokens) for token_ids in batch]
+
+    def decode(self, token_ids: List[int], skip_special_tokens: bool = True) -> str:
         return self.tokenizer.decode(token_ids)
 
     def get_vocabulary(self):
