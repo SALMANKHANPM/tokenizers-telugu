@@ -120,36 +120,16 @@ class Llama3Tokenizer:
         
         self.save_path = vocabulary_path / f"{model_path.name.rstrip("tokenizer.model")}vocab.json"
 
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(vocab_size={self.n_words})"
+
     def encode(
         self,
         s: str,
-        *,
-        bos: bool = False,
-        eos: bool = False,
+        add_special_tokens: bool = False,
         allowed_special: Optional[Union[Literal["all"], AbstractSet[str]]] = None,
         disallowed_special: Union[Literal["all"], Collection[str]] = (),
     ) -> List[int]:
-        """
-        Encodes a string into a list of token IDs.
-
-        Args:
-            s (str): The input string to be encoded.
-            bos (bool): Whether to prepend the beginning-of-sequence token.
-            eos (bool): Whether to append the end-of-sequence token.
-            allowed_special ("all"|set[str]): allowed special tokens in string
-            disallowed_special ("all"|set[str]): special tokens that raise an error when in string
-
-        Returns:
-            list[int]: A list of token IDs.
-
-        By default, setting disallowed_special=() encodes a string by ignoring
-        special tokens. Specifically:
-        - Setting `disallowed_special` to () will cause all text corresponding
-          to special tokens to be encoded as natural text (insteading of raising
-          an error).
-        - Setting `allowed_special` to "all" will treat all text corresponding
-          to special tokens to be encoded as special tokens.
-        """
         if allowed_special is None:
             allowed_special = set()
         assert type(s) is str
@@ -170,22 +150,18 @@ class Llama3Tokenizer:
                     disallowed_special=disallowed_special,
                 )
             )
-        if bos:
+        if add_special_tokens:
             t.insert(0, self.bos_id)
-        if eos:
             t.append(self.eos_id)
         return t
 
-    def decode(self, t: Sequence[int]) -> str:
-        """
-        Decodes a list of token IDs into a string.
+    def encode_batch(self, texts: List[str], add_special_tokens: bool = False) -> List[List[int]]:
+        return [self.encode(text, add_special_tokens=add_special_tokens) for text in texts]
 
-        Args:
-            t (List[int]): The list of token IDs to be decoded.
+    def decode_batch(self, batch: List[Sequence[int]], skip_special_tokens: bool = True) -> List[str]:
+        return [self.decode(t, skip_special_tokens=skip_special_tokens) for t in batch]
 
-        Returns:
-            str: The decoded string.
-        """
+    def decode(self, t: Sequence[int], skip_special_tokens: bool = True) -> str:
         # Typecast is safe here. Tiktoken doesn't do anything list-related with the sequence.
         return self.model.decode(cast(List[int], t))
 

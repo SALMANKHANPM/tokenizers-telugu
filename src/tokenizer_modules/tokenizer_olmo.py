@@ -30,7 +30,6 @@ class OLMoTokenizer:
 
         if _INSTANCE is None:
             _INSTANCE = cls.from_file(path)
-            print(_INSTANCE)
         return _INSTANCE
 
     def __init__(
@@ -52,6 +51,9 @@ class OLMoTokenizer:
         # Extract filename without extension and create vocab filename
         tokenizer_name = path.stem.replace("_tokenizer", "")
         self.save_path = vocabulary_path / f"{tokenizer_name}_vocab.json"
+
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(vocab_size={self.vocab_size})"
 
     @property
     def vocab_size(self) -> int:
@@ -144,13 +146,13 @@ class OLMoTokenizer:
         else:
             return input_ids[: -(len(input_ids) - truncate_to)]
 
-    def encode(self, input: str, add_special_tokens: bool = True) -> List[int]:
+    def encode(self, input: str, add_special_tokens: bool = False) -> List[int]:
         """
         Encode a string into token IDs.
         """
         return self.encode_batch([input], add_special_tokens=add_special_tokens)[0]
 
-    def encode_batch(self, inputs: List[str], add_special_tokens: bool = True) -> List[List[int]]:
+    def encode_batch(self, inputs: List[str], add_special_tokens: bool = False) -> List[List[int]]:
         """
         Encode a batch of strings into token IDs.
         """
@@ -168,6 +170,9 @@ class OLMoTokenizer:
             all_input_ids.append(input_ids)
 
         return all_input_ids
+
+    def decode_batch(self, batch: List[List[int]], skip_special_tokens: bool = True) -> List[str]:
+        return [self.decode(token_ids, skip_special_tokens=skip_special_tokens) for token_ids in batch]
 
     def decode(self, token_ids: List[int], skip_special_tokens: bool = True) -> str:
         """

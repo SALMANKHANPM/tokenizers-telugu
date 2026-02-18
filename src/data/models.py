@@ -27,5 +27,8 @@ model_id = [
     ("cl100k_base", model_path / "openai" / "cl100k_base_tokenizer.tiktoken", OpenAITokenizer),
     ("p50k_base", model_path / "openai" / "p50k_base_tokenizer.tiktoken", OpenAITokenizer),
     ("tiny-aya", "CohereLabs/tiny-aya-global", HFTokenizer),
-    ("TWO/sutra-mlt256-v2", "TWO/sutra-mlt256-v2", HFTokenizer),
+    ("TWO-sutra-mlt256", "TWO/sutra-mlt256-v2", HFTokenizer),
+    ("Param2-17B-MOE", "bharatgenai/Param2-17B-A2.4B-Thinking", HFTokenizer),
+    ("Nanbeige4.1-3B", "Nanbeige/Nanbeige4.1-3B", HFTokenizer), # temporary, actual model use sentencepiece tokenizer
+    #("Dhi-5B-Base", "Shaligram-Dewangan/Dhi-5B-Base", HFTokenizer), # need to impl 
 ]

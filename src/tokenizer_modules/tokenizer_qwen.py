@@ -126,6 +126,9 @@ class QWenTokenizer(PreTrainedTokenizer):
         }
 
 
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(vocab_size={self.vocab_size})"
+
     def __getstate__(self):
         # for pickle lovers
         state = self.__dict__.copy()
@@ -195,6 +198,7 @@ class QWenTokenizer(PreTrainedTokenizer):
     def encode(
         self,
         text: str,
+        add_special_tokens: bool = False,
         allowed_special: Union[Set, str] = "all",
         disallowed_special: Union[Collection, str] = (),
         return_bytes: bool = False,
@@ -221,9 +225,8 @@ class QWenTokenizer(PreTrainedTokenizer):
         """
         self.return_bytes = return_bytes
         tokens = []
-        print(text)
         text = unicodedata.normalize("NFC", text)
-        print("afer normalize", text)
+        
 
 
         # this implementation takes a detour: text -> token id -> token surface forms
@@ -235,6 +238,12 @@ class QWenTokenizer(PreTrainedTokenizer):
             return tokens
         tokens_ids = self.convert_tokens_to_ids(tokens)
         return tokens_ids
+
+    def encode_batch(self, texts: List[str], add_special_tokens: bool = False) -> List[List[int]]:
+        return [self.encode(text, add_special_tokens=add_special_tokens) for text in texts]
+
+    def decode_batch(self, batch: List[List[int]], skip_special_tokens: bool = True) -> List[str]:
+        return [self.decode(token_ids, skip_special_tokens=skip_special_tokens) for token_ids in batch]
 
     def convert_tokens_to_string(self, tokens: List[Union[bytes, str]]) -> str:
         """

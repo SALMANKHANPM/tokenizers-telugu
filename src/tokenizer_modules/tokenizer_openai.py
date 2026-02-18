@@ -72,14 +72,23 @@ class OpenAITokenizer:
             self.tokenizer = get_encoding(encoding)
         
         self.save_path = vocabulary_path / f"{self.model_name}_vocab.json"
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(model={self.model_name}, vocab_size={self.tokenizer.n_vocab})"
+
     @staticmethod
     def model_to_encoding(model_name: str) -> str | None:
         return MODEL_MAPPING.get(model_name)
 
-    def encode(self, text: str) -> List[int]:
+    def encode(self, text: str, add_special_tokens: bool = False) -> List[int]:
         return self.tokenizer.encode(text)
 
-    def decode(self, token_ids: List[int]) -> str:
+    def encode_batch(self, texts: List[str], add_special_tokens: bool = False) -> List[List[int]]:
+        return [self.encode(text, add_special_tokens=add_special_tokens) for text in texts]
+
+    def decode_batch(self, batch: List[List[int]], skip_special_tokens: bool = True) -> List[str]:
+        return [self.decode(token_ids, skip_special_tokens=skip_special_tokens) for token_ids in batch]
+
+    def decode(self, token_ids: List[int], skip_special_tokens: bool = True) -> str:
         return self.tokenizer.decode(token_ids)
 
     def get_vocabulary(self):

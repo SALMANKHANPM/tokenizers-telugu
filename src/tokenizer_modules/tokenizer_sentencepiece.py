@@ -55,36 +55,23 @@ class SentencePieceTokenizer:
         assert self.sp_model.vocab_size() == self.sp_model.get_piece_size()
         self.save_path = vocabulary_path / f"{model_path.name.strip("tokenizer.model")}vocab.json"
 
-    def encode(self, s: str, bos: bool = False, eos: bool = False) -> List[int]:
-        """
-        Encodes a string into a list of token IDs.
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(vocab_size={self.n_words})"
 
-        Args:
-            s (str): The input string to be encoded.
-            bos (bool): Whether to prepend the beginning-of-sequence token.
-            eos (bool): Whether to append the end-of-sequence token.
-
-        Returns:
-            List[int]: A list of token IDs.
-        """
+    def encode(self, s: str, add_special_tokens: bool = False) -> List[int]:
         assert type(s) is str
         t = self.sp_model.encode(s)
-        if bos:
-            t = [self.bos_id] + t
-        if eos:
-            t = t + [self.eos_id]
+        if add_special_tokens:
+            t = [self.bos_id] + t + [self.eos_id]
         return t
 
-    def decode(self, t: List[int]) -> str:
-        """
-        Decodes a list of token IDs into a string.
+    def encode_batch(self, texts: List[str], add_special_tokens: bool = False) -> List[List[int]]:
+        return [self.encode(text, add_special_tokens=add_special_tokens) for text in texts]
 
-        Args:
-            t (List[int]): The list of token IDs to be decoded.
+    def decode_batch(self, batch: List[List[int]], skip_special_tokens: bool = True) -> List[str]:
+        return [self.decode(t, skip_special_tokens=skip_special_tokens) for t in batch]
 
-        Returns:
-            str: The decoded string.
-        """
+    def decode(self, t: List[int], skip_special_tokens: bool = True) -> str:
         return self.sp_model.decode(t)
 
     def get_vocabulary(self) -> dict[int, str]:

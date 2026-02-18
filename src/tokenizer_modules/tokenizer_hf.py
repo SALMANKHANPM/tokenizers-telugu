@@ -4,26 +4,34 @@ from typing import List
 import json
 from src.data.utils import vocabulary_path
 
-_INSTANCE = None
-
 class HFTokenizer:
+    _instances: dict = {}
+
     @classmethod
     def get_instance(cls, model_name: str):
-        global _INSTANCE
-        if _INSTANCE is None:
-            _INSTANCE = cls(model_name=model_name)
-        return _INSTANCE
-    
+        if model_name not in cls._instances:
+            cls._instances[model_name] = cls(model_name=model_name)
+        return cls._instances[model_name]
+
     def __init__(self, model_name: str):
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True, trust_remote_code=True)
         self.save_path = vocabulary_path / f"{model_name.replace('/', '_')}_vocab.json"
-        
-    def encode(self, text: str):
-        return self.tokenizer.encode(text)
-    
-    def decode(self, token_ids: List[int]):
-        return self.tokenizer.decode(token_ids)
-    
+
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(model={self.tokenizer.name_or_path}, vocab_size={self.tokenizer.vocab_size})"
+
+    def encode(self, text: str, add_special_tokens: bool = False) -> List[int]:
+        return self.tokenizer.encode(text, add_special_tokens=add_special_tokens)
+
+    def encode_batch(self, texts: List[str], add_special_tokens: bool = False) -> List[List[int]]:
+        return [self.encode(text, add_special_tokens=add_special_tokens) for text in texts]
+
+    def decode(self, token_ids: List[int], skip_special_tokens: bool = True) -> str:
+        return self.tokenizer.decode(token_ids, skip_special_tokens=skip_special_tokens)
+
+    def decode_batch(self, batch: List[List[int]], skip_special_tokens: bool = True) -> List[str]:
+        return [self.decode(token_ids, skip_special_tokens=skip_special_tokens) for token_ids in batch]
+
     def save_vocabulary(self):
         with open(self.save_path, "w") as f:
             vocab = {v: k for k, v in self.tokenizer.vocab.items()}
