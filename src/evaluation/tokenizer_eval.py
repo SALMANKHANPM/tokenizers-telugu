@@ -1,83 +1,64 @@
-import sys
-from pathlib import Path
-
-# Add project root to path for direct script execution
-project_root = Path(__file__).resolve().parent.parent.parent
-if str(project_root) not in sys.path:
-    sys.path.insert(0, str(project_root))
-
-try:
-    from ..data.languages import language_codes
-    from ..data.models import model_id
-    from ..data.utils import tokenizer_eval_dataset_id as dataset_id
-except ImportError:
-    from src.data.languages import language_codes
-    from src.data.models import model_id
-    from src.data.utils import tokenizer_eval_dataset_id as dataset_id
-
-from datasets import load_dataset  # noqa: E402
-from typing import List, Dict  # noqa: E402
-import json  # noqa: E402
-from datatrove.utils.word_tokenizers import load_word_tokenizer  # noqa: E402
-import numpy as np  # noqa: E402
-from tqdm import tqdm  # noqa: E402
-from itertools import islice  # noqa: E402
-from collections import defaultdict  # noqa: E402
+from collections import defaultdict
+import json
+from datasets import load_dataset
+from datatrove.utils.word_tokenizers import WordTokenizer, load_word_tokenizer
+from src.data.models import model_id
+from src.data.languages import language_codes
+import numpy as np
 
 class TokenizerEvaluator:
-    def __init__(self):
+    def __init__(self, dataset_id: str, language_codes: list[tuple[str, str]], model_id: list[tuple[str, str, str]]):
+        self.dataset_id = dataset_id
+        self.language_codes = language_codes
+        self.model_id = model_id
         self.results = defaultdict(list)
 
-    def process_dataset(self, dataset):
-        # Take up to 100 samples, or all samples if fewer than 100
-        samples = list(islice(dataset, 100))
-        dataset_text = "\n".join([sample["text"] for sample in samples])
-        return dataset_text
+    def load_model(self, model_id: str):
+        for model, model_path, tokenizer_class in model_id:
+            if model_id == model:
+                return tokenizer_class.get_instance(model_path)
+        raise ValueError(f"Model not found for model_id: {model_id}")
     
-    def compute_metrics(self, text: str, word_tokenizer, tokenizer):
-        word_tokens = word_tokenizer.word_tokenize(text)
-        words_count = len(word_tokens)
-        
-        # Encode each word individually to count tokens per word
-        tokens_per_word = []
-        for word in word_tokens:
-            word_token_ids = tokenizer.encode(word)
-            tokens_per_word.append(len(word_token_ids))
-        
-        tokens_per_word = np.array(tokens_per_word)
-        tokens_count = np.sum(tokens_per_word)
-        
+    def compute_metrics(self, text: str, word_tokenizer: WordTokenizer, tokenizer):
+        words = word_tokenizer.word_tokenize(text)
+        tokens = tokenizer.encode_batch(words)
+        tokens_per_word = np.array(list(map(len, tokens)))
         fertility = np.mean(tokens_per_word).item()
-        pcw = (tokens_per_word >= 2).sum() / len(tokens_per_word)
+        pcw = float((tokens_per_word >= 2).sum() / len(tokens_per_word))
         
-        return words_count, int(tokens_count), fertility, float(pcw)
+        return len(words), int(np.sum(tokens_per_word)), fertility, pcw
     
     def process(self):
-        for lang_id, lang_code in tqdm(language_codes, desc="Processing languages"):
-            dataset =  load_dataset(dataset_id, lang_code, split="train")
-            dataset_text = self.process_dataset(dataset)
+        for lang_id, lang_code in self.language_codes:
+            dataset = load_dataset(self.dataset_id, lang_code, split="train")
+            if dataset.num_rows < 100:
+                continue
+            ds_iter = iter(dataset)
+            text = "\n".join([next(ds_iter)["text"] for _ in range(100)])
             word_tokenizer = load_word_tokenizer(lang_id)
-            for model_name, tokenizer_path, tokenizer_class in tqdm(model_id, desc="Processing at Model Level", leave=False):
-                tokenizer = tokenizer_class.get_instance(tokenizer_path)
-                words_count, tokens_count, fertility, pcw = self.compute_metrics(text=dataset_text, word_tokenizer=word_tokenizer, tokenizer=tokenizer)
-                self.results[model_name].append({
-                    "lang_id": lang_id,
-                    "lang_code": lang_code,
-                    "words_count": words_count,
-                    "tokens_count": tokens_count,
-                    "fertility": fertility,
-                    "pcw": pcw
+            print(f"------------{lang_id} | {lang_code}--------------------")
+            for model, model_path, tokenizer_class in self.model_id:
+                tokenizer = tokenizer_class.get_instance(model_path)
+                metrics = self.compute_metrics(text, word_tokenizer, tokenizer)
+                
+                print(f"Model: {model}, Text: {text[:10]}, Tokenizer: {tokenizer}")
+                print(metrics)
+                
+                self.results[lang_id].append({
+                    "model": model,
+                    "words_count": metrics[0],
+                    "tokens_count": metrics[1],
+                    "fertility": metrics[2],
+                    "pcw": metrics[3]
                 })
+            
         return self.results
     
-    def save_results(self, results: List[Dict]):
-        with open("results.jsonl", "w") as f:
-            for result in results:
-                f.write(json.dumps(result) + "\n")
-
+    def save_results(self, results: dict):
+        with open("results.json", "w") as f:
+            json.dump(results, f, indent=4)
+    
 if __name__ == "__main__":
-    evaluator = TokenizerEvaluator()
-    results = evaluator.process()
-    evaluator.save_results(results)
-
-    print(results)
+    tokenizer_evaluator = TokenizerEvaluator(dataset_id="salmankhanpm/tokenizer-eval-set", language_codes=language_codes, model_id=model_id)
+    results = tokenizer_evaluator.process()
+    tokenizer_evaluator.save_results(results)
