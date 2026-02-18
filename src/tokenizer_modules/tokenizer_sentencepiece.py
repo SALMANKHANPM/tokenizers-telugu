@@ -78,6 +78,9 @@ class SentencePieceTokenizer:
             t = t + [self.eos_id]
         return t
 
+    def encode_batch(self, texts: List[str]) -> List[List[int]]:
+        return [self.encode(text) for text in texts]
+
     def decode(self, t: List[int]) -> str:
         """
         Decodes a list of token IDs into a string.

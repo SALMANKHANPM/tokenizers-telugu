@@ -238,6 +238,9 @@ class QWenTokenizer(PreTrainedTokenizer):
         tokens_ids = self.convert_tokens_to_ids(tokens)
         return tokens_ids
 
+    def encode_batch(self, texts: List[str]) -> List[List[int]]:
+        return [self.encode(text) for text in texts]
+
     def convert_tokens_to_string(self, tokens: List[Union[bytes, str]]) -> str:
         """
         Converts a sequence of tokens in a single string.

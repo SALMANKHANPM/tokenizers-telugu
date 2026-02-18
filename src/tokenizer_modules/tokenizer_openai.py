@@ -82,6 +82,9 @@ class OpenAITokenizer:
     def encode(self, text: str) -> List[int]:
         return self.tokenizer.encode(text)
 
+    def encode_batch(self, texts: List[str]) -> List[List[int]]:
+        return [self.encode(text) for text in texts]
+
     def decode(self, token_ids: List[int]) -> str:
         return self.tokenizer.decode(token_ids)
 

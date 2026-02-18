@@ -25,6 +25,9 @@ class MistralTokenizer:
 
     def encode(self, s: str, bos: bool = True, eos: bool = True) -> List[int]:
         return self.tokenizer.encode(s, bos=bos, eos=eos)
+
+    def encode_batch(self, texts: List[str]) -> List[List[int]]:
+        return [self.encode(text) for text in texts]
     
     def decode(self, t: List[int]) -> str:
         return self.tokenizer.decode(t, special_token_policy=SpecialTokenPolicy.KEEP)
@@ -55,6 +58,9 @@ class MistralTekkenizer:
 
     def encode(self, s: str, bos: bool = True, eos: bool = True) -> List[int]:
         return self.tokenizer.encode(s, bos=bos, eos=eos)
+
+    def encode_batch(self, texts: List[str]) -> List[List[int]]:
+        return [self.encode(text) for text in texts]
     
     def decode(self, t: List[int]) -> str:
         return self.tokenizer.decode(t, special_token_policy=SpecialTokenPolicy.KEEP)

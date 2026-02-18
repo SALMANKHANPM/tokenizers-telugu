@@ -178,7 +178,10 @@ class Llama3Tokenizer:
         if eos:
             t.append(self.eos_id)
         return t
-
+    
+    def encode_batch(self, texts: List[str]) -> List[List[int]]:
+        return [self.encode(text) for text in texts]
+    
     def decode(self, t: Sequence[int]) -> str:
         """
         Decodes a list of token IDs into a string.
