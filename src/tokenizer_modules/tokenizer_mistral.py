@@ -7,15 +7,14 @@ from mistral_common.tokens.tokenizers.tekken import Tekkenizer
 from mistral_common.tokens.tokenizers.base import SpecialTokenPolicy
 from src.data.utils import vocabulary_path
 
-_INSTANCE = None
-
 class MistralTokenizer:
+    _instance = None
+
     @classmethod
     def get_instance(cls, path: Path):
-        global _INSTANCE
-        if _INSTANCE is None:
-            _INSTANCE = cls(model_path=path)
-        return _INSTANCE
+        if cls._instance is None:
+            cls._instance = cls(model_path=path)
+        return cls._instance
     
     def __init__(self, model_path: Path):
         self.tokenizer = SentencePieceTokenizer(model_path)
@@ -39,12 +38,13 @@ class MistralTokenizer:
             json.dump(self.get_vocabulary(), f, indent=2, ensure_ascii=False)
     
 class MistralTekkenizer:
+    _instance = None
+
     @classmethod
     def get_instance(cls, path: Path):
-        global _INSTANCE
-        if _INSTANCE is None:
-            _INSTANCE = cls(model_path=path)
-        return _INSTANCE
+        if cls._instance is None:
+            cls._instance = cls(model_path=path)
+        return cls._instance
     
     def __init__(self, model_path: Path):
         self.tokenizer = Tekkenizer.from_file(model_path)

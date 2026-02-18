@@ -35,7 +35,6 @@ class OLMoTokenizer:
 
         if _INSTANCE is None:
             _INSTANCE = cls.from_file(path)
-            print(_INSTANCE)
         return _INSTANCE
 
     def __init__(
