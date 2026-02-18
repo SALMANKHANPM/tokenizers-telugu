@@ -126,6 +126,9 @@ class QWenTokenizer(PreTrainedTokenizer):
         }
 
 
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(vocab_size={self.vocab_size})"
+
     def __getstate__(self):
         # for pickle lovers
         state = self.__dict__.copy()

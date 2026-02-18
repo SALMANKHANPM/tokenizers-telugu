@@ -185,6 +185,9 @@ class Llama4Tokenizer:
         
         self.save_path = vocabulary_path / f"{model_path.name.rstrip("tokenizer.model")}vocab.json"
 
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(vocab_size={self.n_words})"
+
     def encode(
         self,
         s: str,

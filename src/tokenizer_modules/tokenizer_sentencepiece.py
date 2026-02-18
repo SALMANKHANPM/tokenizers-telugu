@@ -55,6 +55,9 @@ class SentencePieceTokenizer:
         assert self.sp_model.vocab_size() == self.sp_model.get_piece_size()
         self.save_path = vocabulary_path / f"{model_path.name.strip("tokenizer.model")}vocab.json"
 
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(vocab_size={self.n_words})"
+
     def encode(self, s: str, bos: bool = False, eos: bool = False) -> List[int]:
         """
         Encodes a string into a list of token IDs.

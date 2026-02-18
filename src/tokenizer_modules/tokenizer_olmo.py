@@ -58,6 +58,9 @@ class OLMoTokenizer:
         tokenizer_name = path.stem.replace("_tokenizer", "")
         self.save_path = vocabulary_path / f"{tokenizer_name}_vocab.json"
 
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(vocab_size={self.vocab_size})"
+
     @property
     def vocab_size(self) -> int:
         return self.base_tokenizer.get_vocab_size()

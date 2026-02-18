@@ -21,6 +21,9 @@ class MistralTokenizer:
         self.tokenizer = SentencePieceTokenizer(model_path)
         self.save_path = vocabulary_path / f"{model_path.name.rstrip("tokenizer.model")}vocab.json"
         
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(vocab_size={self.tokenizer.n_words})"
+
     def encode(self, s: str, bos: bool = True, eos: bool = True) -> List[int]:
         return self.tokenizer.encode(s, bos=bos, eos=eos)
     
@@ -47,6 +50,9 @@ class MistralTekkenizer:
         self.tokenizer = Tekkenizer.from_file(model_path)
         self.save_path = vocabulary_path / f"{model_path.name.rstrip("tokenizer.json")}vocab.json"
         
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(vocab_size={self.tokenizer.n_words})"
+
     def encode(self, s: str, bos: bool = True, eos: bool = True) -> List[int]:
         return self.tokenizer.encode(s, bos=bos, eos=eos)
     
