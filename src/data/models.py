@@ -7,7 +7,7 @@ from src.tokenizer_modules.tokenizer_olmo import OLMoTokenizer
 from src.tokenizer_modules.tokenizer_qwen import QWenTokenizer
 from src.tokenizer_modules.tokenizer_llama4 import Llama4Tokenizer
 from src.tokenizer_modules.tokenizer_llama3 import Llama3Tokenizer
-
+from src.tokenizer_modules.tokenizer_hf import HFTokenizer
 
 # tuple of (model_name, model_path, tokenizer class)
 model_id = [
@@ -26,4 +26,6 @@ model_id = [
     ("o200k_base", model_path / "openai" / "o200k_base_tokenizer.tiktoken", OpenAITokenizer), # o1,3,4 and gpt 5 uses 0200k_base
     ("cl100k_base", model_path / "openai" / "cl100k_base_tokenizer.tiktoken", OpenAITokenizer),
     ("p50k_base", model_path / "openai" / "p50k_base_tokenizer.tiktoken", OpenAITokenizer),
+    ("tiny-aya", "CohereLabs/tiny-aya-global", HFTokenizer),
+    ("TWO/sutra-mlt256-v2", "TWO/sutra-mlt256-v2", HFTokenizer),
 ]

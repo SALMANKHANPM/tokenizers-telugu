@@ -6,17 +6,12 @@ from pathlib import Path
 from typing import List, Optional, Union
 
 from tokenizers import Tokenizer as BaseTokenizer
-from contextlib import contextmanager
 from src.data.utils import vocabulary_path
-# from olmo_data import get_data_path, is_data_file
-
-# from .aliases import PathOrStr
-# from .config import ModelConfig, TokenizerConfig, TrainConfig, TruncationDirection
-# from .exceptions import OLMoConfigurationError
 
 __all__ = ["OLMoTokenizer"]
 
 _INSTANCE = None
+
 
 class OLMoTokenizer:
     """
@@ -63,7 +58,7 @@ class OLMoTokenizer:
     @property
     def vocab_size(self) -> int:
         return self.base_tokenizer.get_vocab_size()
-    
+
     @property
     def vocab(self) -> dict[str, int]:
         return self.base_tokenizer.get_vocab()
@@ -147,7 +142,7 @@ class OLMoTokenizer:
         if truncate_to is None or len(input_ids) <= truncate_to:
             return input_ids
         elif direction == "left":
-            return input_ids[len(input_ids) - truncate_to :]
+            return input_ids[len(input_ids) - truncate_to:]
         else:
             return input_ids[: -(len(input_ids) - truncate_to)]
 
@@ -181,22 +176,24 @@ class OLMoTokenizer:
         Decode a list of token IDs to a string.
         """
         return self.base_tokenizer.decode(token_ids, skip_special_tokens=skip_special_tokens)
-    
+
     def tokenizer_name(self) -> str:
         """Return the tokenizer name based on the path stem."""
         return self.path.stem
-    
+
     def save_vocabulary(self):
         """Save the tokenizer vocabulary to a JSON file."""
         os.makedirs(self.save_path.parent, exist_ok=True)
         with open(self.save_path, "w") as f:
             # Save vocab as-is (token_str -> token_id mapping)
-            json.dump(self.vocab, f, indent=2, ensure_ascii=False)
-    
+            vocab = {v: k for k, v in self.vocab.items()}
+            json.dump(vocab, f, indent=2, ensure_ascii=False)
+
+
 if __name__ == "__main__":
     tokenizer = OLMoTokenizer.get_instance(path=Path(__file__).parent.parent / "tokenizer-models" / "olmo" / "olmo_tokenizer.json")
     tokens = tokenizer.encode("ఎలా టైపు చెయ్యాలో వివరంగా తెలుసుకోండి, Hello, how are you?")
     for token in tokens:
         print(tokenizer.decode([token]).strip(" "), token)
-        
+
     tokenizer.save_vocabulary()
