@@ -29,6 +29,6 @@ model_id = [
     ("tiny-aya", "CohereLabs/tiny-aya-global", HFTokenizer),
     ("TWO-sutra-mlt256", "TWO/sutra-mlt256-v2", HFTokenizer),
     ("Param2-17B-MOE", "bharatgenai/Param2-17B-A2.4B-Thinking", HFTokenizer),
-    ("Nanbeige4.1-3B", "Nanbeige/Nanbeige4.1-3B", HFTokenizer), # temporary, actual model use sentencepiece tokenizer
+    ("Krutrim-2", "krutrim-ai-labs/Krutrim-2-instruct", HFTokenizer),
     #("Dhi-5B-Base", "Shaligram-Dewangan/Dhi-5B-Base", HFTokenizer), # need to impl 
 ]

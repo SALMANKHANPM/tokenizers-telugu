@@ -305,8 +305,8 @@ class QWenTokenizer(PreTrainedTokenizer):
             token_ids = [i for i in token_ids if i < self.eod_id]
         return self.tokenizer.decode(token_ids, errors=errors or self.errors)
     
-    def get_vocabulary(self):
-        return {i: self.decode([i]) for i in range(self.tokenizer.n_vocab)}
+    def get_vocabulary(self) -> dict[int, str]:
+        return {i: self.decode([i], skip_special_tokens=False) for i in range(self.tokenizer.n_vocab)}
     
     
     
@@ -314,6 +314,7 @@ class QWenTokenizer(PreTrainedTokenizer):
         os.makedirs(self.save_path.parent, exist_ok=True)
         with open(self.save_path, "w") as f:
             json.dump(self.get_vocabulary(), f, indent=2, ensure_ascii=False)
+        print(f"Vocabulary saved to {self.save_path}")
     
 
 if __name__ == "__main__":

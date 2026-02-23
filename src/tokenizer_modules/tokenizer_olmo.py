@@ -184,13 +184,15 @@ class OLMoTokenizer:
         """Return the tokenizer name based on the path stem."""
         return self.path.stem
 
+    def get_vocabulary(self) -> dict[int, str]:
+        return {i: self.decode([i], skip_special_tokens=False) for i in range(self.vocab_size)}
+
     def save_vocabulary(self):
         """Save the tokenizer vocabulary to a JSON file."""
         os.makedirs(self.save_path.parent, exist_ok=True)
         with open(self.save_path, "w") as f:
-            # Save vocab as-is (token_str -> token_id mapping)
-            vocab = {v: k for k, v in self.vocab.items()}
-            json.dump(vocab, f, indent=2, ensure_ascii=False)
+            json.dump(self.get_vocabulary(), f, indent=2, ensure_ascii=False)
+        print(f"Vocabulary saved to {self.save_path}")
 
 
 if __name__ == "__main__":

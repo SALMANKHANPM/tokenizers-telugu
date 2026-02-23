@@ -18,7 +18,7 @@ class MistralTokenizer:
     
     def __init__(self, model_path: Path):
         self.tokenizer = SentencePieceTokenizer(model_path)
-        self.save_path = vocabulary_path / f"{model_path.name.rstrip("tokenizer.model")}vocab.json"
+        self.save_path = vocabulary_path / f"{model_path.stem.replace('_tokenizer', '')}_vocab.json"
         
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}(vocab_size={self.tokenizer.n_words})"
@@ -43,6 +43,7 @@ class MistralTokenizer:
         os.makedirs(self.save_path.parent, exist_ok=True)  
         with open(self.save_path, "w") as f:
             json.dump(self.get_vocabulary(), f, indent=2, ensure_ascii=False)
+        print(f"Vocabulary saved to {self.save_path}")
     
 class MistralTekkenizer:
     _instance = None
@@ -55,7 +56,7 @@ class MistralTekkenizer:
     
     def __init__(self, model_path: Path):
         self.tokenizer = Tekkenizer.from_file(model_path)
-        self.save_path = vocabulary_path / f"{model_path.name.rstrip("tokenizer.json")}vocab.json"
+        self.save_path = vocabulary_path / f"{model_path.stem.replace('_tokenizer', '')}_vocab.json"
         
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}(vocab_size={self.tokenizer.n_words})"
@@ -73,16 +74,14 @@ class MistralTekkenizer:
         policy = SpecialTokenPolicy.IGNORE if skip_special_tokens else SpecialTokenPolicy.KEEP
         return self.tokenizer.decode(t, special_token_policy=policy)
 
-    def get_vocabulary(self):
-        vocabulary = {}
-        for i in range(self.tokenizer.n_words):
-            vocabulary[i] = self.tokenizer.decode([i], special_token_policy=SpecialTokenPolicy.KEEP)
-        return vocabulary
+    def get_vocabulary(self) -> dict[int, str]:
+        return {i: self.decode([i], skip_special_tokens=False) for i in range(self.tokenizer.n_words)}
     
     def save_vocabulary(self):
         os.makedirs(self.save_path.parent, exist_ok=True)
         with open(self.save_path, "w") as f:
             json.dump(self.get_vocabulary(), f, indent=2, ensure_ascii=False)
+        print(f"Vocabulary saved to {self.save_path}")
     
 
 if __name__ == "__main__":

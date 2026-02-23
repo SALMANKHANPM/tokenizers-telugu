@@ -89,18 +89,20 @@ class OpenAITokenizer:
         return [self.decode(token_ids, skip_special_tokens=skip_special_tokens) for token_ids in batch]
 
     def decode(self, token_ids: List[int], skip_special_tokens: bool = True) -> str:
-        return self.tokenizer.decode(token_ids)
+        try:
+            return self.tokenizer.decode(token_ids)
+        except KeyError:
+            special_tokens_inv = {v: k for k, v in self.tokenizer._special_tokens.items()}
+            return "".join(special_tokens_inv.get(i, "") for i in token_ids)
 
-    def get_vocabulary(self):
-        token_bytes = self.tokenizer.token_byte_values()  
-        token_texts = [b.decode('utf-8', errors='replace') for b in token_bytes]  
-        vocabulary = {i: token_texts[i] for i in range(len(token_bytes))}
-        return vocabulary
+    def get_vocabulary(self) -> dict[int, str]:
+        return {i: self.decode([i], skip_special_tokens=False) for i in range(self.tokenizer.n_vocab)}
     
     def save_vocabulary(self):
         os.makedirs(self.save_path.parent, exist_ok=True)
         with open(self.save_path, "w") as f:
             json.dump(self.get_vocabulary(), f, indent=2, ensure_ascii=False)
+        print(f"Vocabulary saved to {self.save_path}")
 
 if __name__ == "__main__":
     tokenizer = OpenAITokenizer.get_instance(model_name="o1")

@@ -32,14 +32,16 @@ class HFTokenizer:
     def decode_batch(self, batch: List[List[int]], skip_special_tokens: bool = True) -> List[str]:
         return [self.decode(token_ids, skip_special_tokens=skip_special_tokens) for token_ids in batch]
 
+    def get_vocabulary(self) -> dict[int, str]:
+        return {i: self.decode([i], skip_special_tokens=False) for i in range(self.tokenizer.vocab_size)}
+
     def save_vocabulary(self):
         with open(self.save_path, "w") as f:
-            vocab = {v: k for k, v in self.tokenizer.vocab.items()}
-            json.dump(vocab, f, indent=2, ensure_ascii=False)
-            
+            json.dump(self.get_vocabulary(), f, indent=2, ensure_ascii=False)
+        print(f"Vocabulary saved to {self.save_path}")
 
 if __name__ == "__main__":
-    tokenizer = HFTokenizer.get_instance(model_name="TWO/sutra-mlt256-v2")
+    tokenizer = HFTokenizer.get_instance(model_name="krutrim-ai-labs/Krutrim-2-instruct")
     tokens = tokenizer.encode("ఎలా టైపు చెయ్యాలో వివరంగా తెలుసుకోండి, Hello, how are you?")
     for token in tokens:
         print(tokenizer.decode([token]).strip(" "), token)

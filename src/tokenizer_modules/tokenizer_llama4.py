@@ -183,7 +183,7 @@ class Llama4Tokenizer:
             self.special_tokens["<|eot|>"],
         ]
         
-        self.save_path = vocabulary_path / f"{model_path.name.rstrip("tokenizer.model")}vocab.json"
+        self.save_path = vocabulary_path / f"{model_path.stem.replace('_tokenizer', '')}_vocab.json"
 
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}(vocab_size={self.n_words})"
@@ -254,16 +254,14 @@ class Llama4Tokenizer:
                     current_slice_len = 1
         yield s[slice_start:]
     
-    def get_vocabulary(self):
-        vocabulary = {}
-        for i in range(self.n_words):
-            vocabulary[i] = self.model.decode([i])
-        return vocabulary
+    def get_vocabulary(self) -> dict[int, str]:
+        return {i: self.decode([i], skip_special_tokens=False) for i in range(self.n_words)}
     
     def save_vocabulary(self):
         os.makedirs(self.save_path.parent, exist_ok=True)
         with open(self.save_path, "w") as f:
             json.dump(self.get_vocabulary(), f, indent=2, ensure_ascii=False)
+        print(f"Vocabulary saved to {self.save_path}")
 
 if __name__ == "__main__":
     # Usage

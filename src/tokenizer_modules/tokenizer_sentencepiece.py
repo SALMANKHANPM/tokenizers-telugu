@@ -18,17 +18,16 @@ from src.data.utils import vocabulary_path
 
 logger = getLogger()
 
-_INSTANCE = None
-
 class SentencePieceTokenizer:
     """tokenizing and encoding/decoding text using SentencePiece."""
+    _instances: dict = {}
+
     @classmethod
     def get_instance(cls, model_path: Path):
-        global _INSTANCE
-
-        if _INSTANCE is None:
-            _INSTANCE = SentencePieceTokenizer(model_path=model_path)
-        return _INSTANCE
+        key = str(model_path)
+        if key not in cls._instances:
+            cls._instances[key] = cls(model_path=model_path)
+        return cls._instances[key]
     
     def __init__(self, model_path: Path):
         """
@@ -53,7 +52,7 @@ class SentencePieceTokenizer:
             f"#words: {self.n_words} - BOS ID: {self.bos_id} - EOS ID: {self.eos_id}"
         )
         assert self.sp_model.vocab_size() == self.sp_model.get_piece_size()
-        self.save_path = vocabulary_path / f"{model_path.name.strip("tokenizer.model")}vocab.json"
+        self.save_path = vocabulary_path / f"{model_path.stem.replace('_tokenizer', '')}_vocab.json"
 
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}(vocab_size={self.n_words})"
@@ -75,20 +74,17 @@ class SentencePieceTokenizer:
         return self.sp_model.decode(t)
 
     def get_vocabulary(self) -> dict[int, str]:
-        vocabulary = {}
-        for i in range(self.sp_model.get_piece_size()):
-            vocabulary[i] = self.sp_model.id_to_piece(i)
-        return vocabulary
+        return {i: self.decode([i], skip_special_tokens=False) for i in range(self.n_words)}
 
     def save_vocabulary(self):
         os.makedirs(self.save_path.parent, exist_ok=True)
         with open(self.save_path, "w") as f:
             json.dump(self.get_vocabulary(), f, indent=2, ensure_ascii=False)
-
+        print(f"Vocabulary saved to {self.save_path}")
 if __name__ == "__main__":
     # Usage
     tokenizer = SentencePieceTokenizer.get_instance(model_path=Path(__file__).parent.parent / "tokenizer-models" / "sarvam1" / "sarvam1_tokenizer.model")
-    tokens = tokenizer.encode("ఎలా టైపు చెయ్యాలో వివరంగా తెలుసుకోండి", bos=False, eos=False)
+    tokens = tokenizer.encode("ఎలా టైపు చెయ్యాలో వివరంగా తెలుసుకోండి")
     for token in tokens:
         print(tokenizer.decode([token]).strip(" "), token)
         
