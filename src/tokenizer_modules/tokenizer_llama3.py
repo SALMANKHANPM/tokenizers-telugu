@@ -121,7 +121,7 @@ class Llama3Tokenizer:
         self.save_path = vocabulary_path / f"{model_path.stem.replace('_tokenizer', '')}_vocab.json"
 
     def __repr__(self) -> str:
-        return f"{self.__class__.__name__}(vocab_size={self.n_words})"
+        return f"{self.__class__.__name__}(vocab_size={self.n_words}, backend={type(self.model).__name__})"
 
     def encode(
         self,

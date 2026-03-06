@@ -1,0 +1,1082 @@
+{
+    "tel_Telu": [
+        {
+            "model": "gemma",
+            "words_count": 43194,
+            "tokens_count": 149005,
+            "fertility": 3.449668935500301,
+            "pcw": 0.7370468120572302
+        },
+        {
+            "model": "gemma3",
+            "words_count": 43194,
+            "tokens_count": 117315,
+            "fertility": 2.716002222530907,
+            "pcw": 0.7191045052553595
+        },
+        {
+            "model": "llama4",
+            "words_count": 43194,
+            "tokens_count": 163689,
+            "fertility": 3.789623558827615,
+            "pcw": 0.7578598879474001
+        },
+        {
+            "model": "llama3",
+            "words_count": 43194,
+            "tokens_count": 431862,
+            "fertility": 9.998194193638005,
+            "pcw": 0.7610547761263139
+        },
+        {
+            "model": "llama2",
+            "words_count": 43194,
+            "tokens_count": 640550,
+            "fertility": 14.829605963791268,
+            "pcw": 0.8016854192711951
+        },
+        {
+            "model": "ministral",
+            "words_count": 43194,
+            "tokens_count": 126654,
+            "fertility": 2.932212807334352,
+            "pcw": 0.7224151502523498
+        },
+        {
+            "model": "mistral_small_tekken",
+            "words_count": 43194,
+            "tokens_count": 126654,
+            "fertility": 2.932212807334352,
+            "pcw": 0.7224151502523498
+        },
+        {
+            "model": "mistral_sp",
+            "words_count": 43194,
+            "tokens_count": 421710,
+            "fertility": 9.763161550215308,
+            "pcw": 0.8016854192711951
+        },
+        {
+            "model": "olmo",
+            "words_count": 43194,
+            "tokens_count": 431862,
+            "fertility": 9.998194193638005,
+            "pcw": 0.7610547761263139
+        },
+        {
+            "model": "qwen",
+            "words_count": 43194,
+            "tokens_count": 359349,
+            "fertility": 8.319419363800527,
+            "pcw": 0.7835115988331712
+        },
+        {
+            "model": "sarvam1",
+            "words_count": 43194,
+            "tokens_count": 82813,
+            "fertility": 1.917233875075242,
+            "pcw": 0.41216372644348753
+        },
+        {
+            "model": "gpt-oss",
+            "words_count": 43194,
+            "tokens_count": 168811,
+            "fertility": 3.9082048432652683,
+            "pcw": 0.7537852479511044
+        },
+        {
+            "model": "o200k_base",
+            "words_count": 43194,
+            "tokens_count": 168811,
+            "fertility": 3.9082048432652683,
+            "pcw": 0.7537852479511044
+        },
+        {
+            "model": "cl100k_base",
+            "words_count": 43194,
+            "tokens_count": 431862,
+            "fertility": 9.998194193638005,
+            "pcw": 0.7610547761263139
+        },
+        {
+            "model": "p50k_base",
+            "words_count": 43194,
+            "tokens_count": 641941,
+            "fertility": 14.861809510580173,
+            "pcw": 0.7618419224892347
+        },
+        {
+            "model": "tiny-aya",
+            "words_count": 43194,
+            "tokens_count": 216686,
+            "fertility": 5.016576376348567,
+            "pcw": 0.7819141547437144
+        },
+        {
+            "model": "TWO-sutra-mlt256",
+            "words_count": 43194,
+            "tokens_count": 89808,
+            "fertility": 2.079177663564384,
+            "pcw": 0.48270593137935824
+        },
+        {
+            "model": "Param2-17B-MOE",
+            "words_count": 43194,
+            "tokens_count": 115925,
+            "fertility": 2.6838218271056165,
+            "pcw": 0.7355651247858499
+        },
+        {
+            "model": "Krutrim-2",
+            "words_count": 43194,
+            "tokens_count": 126654,
+            "fertility": 2.932212807334352,
+            "pcw": 0.7224151502523498
+        }
+    ],
+    "ben_Beng": [
+        {
+            "model": "gemma",
+            "words_count": 22847,
+            "tokens_count": 81838,
+            "fertility": 3.5820020133934434,
+            "pcw": 0.8024685954392261
+        },
+        {
+            "model": "gemma3",
+            "words_count": 22847,
+            "tokens_count": 48038,
+            "fertility": 2.102595526765002,
+            "pcw": 0.5857661837440364
+        },
+        {
+            "model": "llama4",
+            "words_count": 22847,
+            "tokens_count": 73322,
+            "fertility": 3.2092616098393663,
+            "pcw": 0.7940210968617324
+        },
+        {
+            "model": "llama3",
+            "words_count": 22847,
+            "tokens_count": 167497,
+            "fertility": 7.331246990852191,
+            "pcw": 0.8380093666564538
+        },
+        {
+            "model": "llama2",
+            "words_count": 22847,
+            "tokens_count": 180397,
+            "fertility": 7.895872543441152,
+            "pcw": 0.8907952904101195
+        },
+        {
+            "model": "ministral",
+            "words_count": 22847,
+            "tokens_count": 71573,
+            "fertility": 3.1327088895697464,
+            "pcw": 0.7962095679957981
+        },
+        {
+            "model": "mistral_small_tekken",
+            "words_count": 22847,
+            "tokens_count": 71573,
+            "fertility": 3.1327088895697464,
+            "pcw": 0.7962095679957981
+        },
+        {
+            "model": "mistral_sp",
+            "words_count": 22847,
+            "tokens_count": 160568,
+            "fertility": 7.02796866109336,
+            "pcw": 0.8907952904101195
+        },
+        {
+            "model": "olmo",
+            "words_count": 22847,
+            "tokens_count": 168713,
+            "fertility": 7.38447060883267,
+            "pcw": 0.8906202127193942
+        },
+        {
+            "model": "qwen",
+            "words_count": 22847,
+            "tokens_count": 131721,
+            "fertility": 5.765352125005471,
+            "pcw": 0.8217271414190047
+        },
+        {
+            "model": "sarvam1",
+            "words_count": 22847,
+            "tokens_count": 41766,
+            "fertility": 1.8280737077077953,
+            "pcw": 0.3670941480281875
+        },
+        {
+            "model": "gpt-oss",
+            "words_count": 22847,
+            "tokens_count": 83576,
+            "fertility": 3.6580732700135683,
+            "pcw": 0.787980916531711
+        },
+        {
+            "model": "o200k_base",
+            "words_count": 22847,
+            "tokens_count": 83576,
+            "fertility": 3.6580732700135683,
+            "pcw": 0.787980916531711
+        },
+        {
+            "model": "cl100k_base",
+            "words_count": 22847,
+            "tokens_count": 168713,
+            "fertility": 7.38447060883267,
+            "pcw": 0.8906202127193942
+        },
+        {
+            "model": "p50k_base",
+            "words_count": 22847,
+            "tokens_count": 258744,
+            "fertility": 11.325075502254125,
+            "pcw": 0.8907952904101195
+        },
+        {
+            "model": "tiny-aya",
+            "words_count": 22847,
+            "tokens_count": 112691,
+            "fertility": 4.93242001138005,
+            "pcw": 0.795071563006084
+        },
+        {
+            "model": "TWO-sutra-mlt256",
+            "words_count": 22847,
+            "tokens_count": 47556,
+            "fertility": 2.0814986650326084,
+            "pcw": 0.4954698647524839
+        },
+        {
+            "model": "Param2-17B-MOE",
+            "words_count": 22847,
+            "tokens_count": 63412,
+            "fertility": 2.775506631067536,
+            "pcw": 0.7388278548605944
+        },
+        {
+            "model": "Krutrim-2",
+            "words_count": 22847,
+            "tokens_count": 71573,
+            "fertility": 3.1327088895697464,
+            "pcw": 0.7962095679957981
+        }
+    ],
+    "guj_Gujr": [
+        {
+            "model": "gemma",
+            "words_count": 12674,
+            "tokens_count": 45210,
+            "fertility": 3.56714533691021,
+            "pcw": 0.7964336436799747
+        },
+        {
+            "model": "gemma3",
+            "words_count": 12674,
+            "tokens_count": 34714,
+            "fertility": 2.7389932144547893,
+            "pcw": 0.7786018620798485
+        },
+        {
+            "model": "llama4",
+            "words_count": 12674,
+            "tokens_count": 43127,
+            "fertility": 3.402793119772763,
+            "pcw": 0.7999842196623008
+        },
+        {
+            "model": "llama3",
+            "words_count": 12674,
+            "tokens_count": 113156,
+            "fertility": 8.928199463468518,
+            "pcw": 0.8456682973015622
+        },
+        {
+            "model": "llama2",
+            "words_count": 12674,
+            "tokens_count": 165297,
+            "fertility": 13.042212403345431,
+            "pcw": 0.8457471989900583
+        },
+        {
+            "model": "ministral",
+            "words_count": 12674,
+            "tokens_count": 47117,
+            "fertility": 3.717610856872337,
+            "pcw": 0.8185261164588922
+        },
+        {
+            "model": "mistral_small_tekken",
+            "words_count": 12674,
+            "tokens_count": 47117,
+            "fertility": 3.717610856872337,
+            "pcw": 0.8185261164588922
+        },
+        {
+            "model": "mistral_sp",
+            "words_count": 12674,
+            "tokens_count": 142534,
+            "fertility": 11.246173268107938,
+            "pcw": 0.8457471989900583
+        },
+        {
+            "model": "olmo",
+            "words_count": 12674,
+            "tokens_count": 113156,
+            "fertility": 8.928199463468518,
+            "pcw": 0.8456682973015622
+        },
+        {
+            "model": "qwen",
+            "words_count": 12674,
+            "tokens_count": 94244,
+            "fertility": 7.4360107306296355,
+            "pcw": 0.8114249644942402
+        },
+        {
+            "model": "sarvam1",
+            "words_count": 12674,
+            "tokens_count": 25107,
+            "fertility": 1.9809846930724317,
+            "pcw": 0.3762821524380622
+        },
+        {
+            "model": "gpt-oss",
+            "words_count": 12674,
+            "tokens_count": 42845,
+            "fertility": 3.3805428436168534,
+            "pcw": 0.7864920309294618
+        },
+        {
+            "model": "o200k_base",
+            "words_count": 12674,
+            "tokens_count": 42845,
+            "fertility": 3.3805428436168534,
+            "pcw": 0.7864920309294618
+        },
+        {
+            "model": "cl100k_base",
+            "words_count": 12674,
+            "tokens_count": 113156,
+            "fertility": 8.928199463468518,
+            "pcw": 0.8456682973015622
+        },
+        {
+            "model": "p50k_base",
+            "words_count": 12674,
+            "tokens_count": 168651,
+            "fertility": 13.306848666561464,
+            "pcw": 0.8457471989900583
+        },
+        {
+            "model": "tiny-aya",
+            "words_count": 12674,
+            "tokens_count": 58527,
+            "fertility": 4.617879122613224,
+            "pcw": 0.7902004102887802
+        },
+        {
+            "model": "TWO-sutra-mlt256",
+            "words_count": 12674,
+            "tokens_count": 26296,
+            "fertility": 2.0747988006943348,
+            "pcw": 0.4973962442796276
+        },
+        {
+            "model": "Param2-17B-MOE",
+            "words_count": 12674,
+            "tokens_count": 33875,
+            "fertility": 2.672794697806533,
+            "pcw": 0.7578507180053653
+        },
+        {
+            "model": "Krutrim-2",
+            "words_count": 12674,
+            "tokens_count": 47117,
+            "fertility": 3.717610856872337,
+            "pcw": 0.8185261164588922
+        }
+    ],
+    "hin_Deva": [
+        {
+            "model": "gemma",
+            "words_count": 3217,
+            "tokens_count": 7718,
+            "fertility": 2.399129623873174,
+            "pcw": 0.6201429903636929
+        },
+        {
+            "model": "gemma3",
+            "words_count": 3217,
+            "tokens_count": 5797,
+            "fertility": 1.8019894311470315,
+            "pcw": 0.42430836182778986
+        },
+        {
+            "model": "llama4",
+            "words_count": 3217,
+            "tokens_count": 7557,
+            "fertility": 2.349082996580665,
+            "pcw": 0.6304009947155735
+        },
+        {
+            "model": "llama3",
+            "words_count": 3217,
+            "tokens_count": 9285,
+            "fertility": 2.886229406279142,
+            "pcw": 0.8302766552688841
+        },
+        {
+            "model": "llama2",
+            "words_count": 3217,
+            "tokens_count": 17854,
+            "fertility": 5.5498912029841465,
+            "pcw": 0.9409387628225054
+        },
+        {
+            "model": "ministral",
+            "words_count": 3217,
+            "tokens_count": 8106,
+            "fertility": 2.519738887161952,
+            "pcw": 0.6611750077712154
+        },
+        {
+            "model": "mistral_small_tekken",
+            "words_count": 3217,
+            "tokens_count": 8106,
+            "fertility": 2.519738887161952,
+            "pcw": 0.6611750077712154
+        },
+        {
+            "model": "mistral_sp",
+            "words_count": 3217,
+            "tokens_count": 17214,
+            "fertility": 5.350948088281007,
+            "pcw": 0.9409387628225054
+        },
+        {
+            "model": "olmo",
+            "words_count": 3217,
+            "tokens_count": 16157,
+            "fertility": 5.022381100404103,
+            "pcw": 0.9319241529375194
+        },
+        {
+            "model": "qwen",
+            "words_count": 3217,
+            "tokens_count": 13926,
+            "fertility": 4.328877836493628,
+            "pcw": 0.8840534659620765
+        },
+        {
+            "model": "sarvam1",
+            "words_count": 3217,
+            "tokens_count": 5050,
+            "fertility": 1.5697855144544606,
+            "pcw": 0.24121852657755674
+        },
+        {
+            "model": "gpt-oss",
+            "words_count": 3217,
+            "tokens_count": 9576,
+            "fertility": 2.976686353745726,
+            "pcw": 0.8253030774013056
+        },
+        {
+            "model": "o200k_base",
+            "words_count": 3217,
+            "tokens_count": 9576,
+            "fertility": 2.976686353745726,
+            "pcw": 0.8253030774013056
+        },
+        {
+            "model": "cl100k_base",
+            "words_count": 3217,
+            "tokens_count": 16157,
+            "fertility": 5.022381100404103,
+            "pcw": 0.9319241529375194
+        },
+        {
+            "model": "p50k_base",
+            "words_count": 3217,
+            "tokens_count": 25340,
+            "fertility": 7.876903947777432,
+            "pcw": 0.9319241529375194
+        },
+        {
+            "model": "tiny-aya",
+            "words_count": 3217,
+            "tokens_count": 12297,
+            "fertility": 3.8225054398507927,
+            "pcw": 0.8284115635685422
+        },
+        {
+            "model": "TWO-sutra-mlt256",
+            "words_count": 3217,
+            "tokens_count": 5681,
+            "fertility": 1.7659309916070873,
+            "pcw": 0.34690705626359963
+        },
+        {
+            "model": "Param2-17B-MOE",
+            "words_count": 3217,
+            "tokens_count": 6276,
+            "fertility": 1.9508859185576624,
+            "pcw": 0.5085483369599005
+        },
+        {
+            "model": "Krutrim-2",
+            "words_count": 3217,
+            "tokens_count": 8106,
+            "fertility": 2.519738887161952,
+            "pcw": 0.6611750077712154
+        }
+    ],
+    "kan_Knda": [
+        {
+            "model": "gemma",
+            "words_count": 31841,
+            "tokens_count": 150156,
+            "fertility": 4.715806664363557,
+            "pcw": 0.8237492541063409
+        },
+        {
+            "model": "gemma3",
+            "words_count": 31841,
+            "tokens_count": 104734,
+            "fertility": 3.2892811155428534,
+            "pcw": 0.810621525705851
+        },
+        {
+            "model": "llama4",
+            "words_count": 31841,
+            "tokens_count": 128198,
+            "fertility": 4.02619264470337,
+            "pcw": 0.8341760623096008
+        },
+        {
+            "model": "llama3",
+            "words_count": 31841,
+            "tokens_count": 398819,
+            "fertility": 12.525328978361232,
+            "pcw": 0.8397349329480858
+        },
+        {
+            "model": "llama2",
+            "words_count": 31841,
+            "tokens_count": 559576,
+            "fertility": 17.57407116610659,
+            "pcw": 0.8425614773405358
+        },
+        {
+            "model": "ministral",
+            "words_count": 31841,
+            "tokens_count": 118828,
+            "fertility": 3.731917967400521,
+            "pcw": 0.8294965610376559
+        },
+        {
+            "model": "mistral_small_tekken",
+            "words_count": 31841,
+            "tokens_count": 118828,
+            "fertility": 3.731917967400521,
+            "pcw": 0.8294965610376559
+        },
+        {
+            "model": "mistral_sp",
+            "words_count": 31841,
+            "tokens_count": 317759,
+            "fertility": 9.979554662227946,
+            "pcw": 0.8425614773405358
+        },
+        {
+            "model": "olmo",
+            "words_count": 31841,
+            "tokens_count": 398936,
+            "fertility": 12.529003486071417,
+            "pcw": 0.8397349329480858
+        },
+        {
+            "model": "qwen",
+            "words_count": 31841,
+            "tokens_count": 296770,
+            "fertility": 9.320373103859803,
+            "pcw": 0.8371910429948808
+        },
+        {
+            "model": "sarvam1",
+            "words_count": 31841,
+            "tokens_count": 69813,
+            "fertility": 2.192550485223454,
+            "pcw": 0.5506108476492573
+        },
+        {
+            "model": "gpt-oss",
+            "words_count": 31841,
+            "tokens_count": 146889,
+            "fertility": 4.613203102917622,
+            "pcw": 0.8236236299111209
+        },
+        {
+            "model": "o200k_base",
+            "words_count": 31841,
+            "tokens_count": 146889,
+            "fertility": 4.613203102917622,
+            "pcw": 0.8236236299111209
+        },
+        {
+            "model": "cl100k_base",
+            "words_count": 31841,
+            "tokens_count": 398936,
+            "fertility": 12.529003486071417,
+            "pcw": 0.8397349329480858
+        },
+        {
+            "model": "p50k_base",
+            "words_count": 31841,
+            "tokens_count": 584913,
+            "fertility": 18.36980622467887,
+            "pcw": 0.8398605571433058
+        },
+        {
+            "model": "tiny-aya",
+            "words_count": 31841,
+            "tokens_count": 446389,
+            "fertility": 14.019314720015075,
+            "pcw": 0.8413994535347508
+        },
+        {
+            "model": "TWO-sutra-mlt256",
+            "words_count": 31841,
+            "tokens_count": 79376,
+            "fertility": 2.4928865299456677,
+            "pcw": 0.6336484406896769
+        },
+        {
+            "model": "Param2-17B-MOE",
+            "words_count": 31841,
+            "tokens_count": 98297,
+            "fertility": 3.0871203793850697,
+            "pcw": 0.796897082378066
+        },
+        {
+            "model": "Krutrim-2",
+            "words_count": 31841,
+            "tokens_count": 118828,
+            "fertility": 3.731917967400521,
+            "pcw": 0.8294965610376559
+        }
+    ],
+    "mal_Mlym": [
+        {
+            "model": "gemma",
+            "words_count": 6186,
+            "tokens_count": 32481,
+            "fertility": 5.250727449078565,
+            "pcw": 0.8208858713223408
+        },
+        {
+            "model": "gemma3",
+            "words_count": 6186,
+            "tokens_count": 22006,
+            "fertility": 3.5573876495311993,
+            "pcw": 0.7843517620433237
+        },
+        {
+            "model": "llama4",
+            "words_count": 6186,
+            "tokens_count": 29963,
+            "fertility": 4.843679275784028,
+            "pcw": 0.8262204978984804
+        },
+        {
+            "model": "llama3",
+            "words_count": 6186,
+            "tokens_count": 83633,
+            "fertility": 13.519721952796637,
+            "pcw": 0.8297769156159069
+        },
+        {
+            "model": "llama2",
+            "words_count": 6186,
+            "tokens_count": 62925,
+            "fertility": 10.172162948593598,
+            "pcw": 0.8370514064015518
+        },
+        {
+            "model": "ministral",
+            "words_count": 6186,
+            "tokens_count": 29055,
+            "fertility": 4.696896217264792,
+            "pcw": 0.8318784351762043
+        },
+        {
+            "model": "mistral_small_tekken",
+            "words_count": 6186,
+            "tokens_count": 29055,
+            "fertility": 4.696896217264792,
+            "pcw": 0.8318784351762043
+        },
+        {
+            "model": "mistral_sp",
+            "words_count": 6186,
+            "tokens_count": 118928,
+            "fertility": 19.225347559004202,
+            "pcw": 0.8370514064015518
+        },
+        {
+            "model": "olmo",
+            "words_count": 6186,
+            "tokens_count": 83638,
+            "fertility": 13.520530229550598,
+            "pcw": 0.8297769156159069
+        },
+        {
+            "model": "qwen",
+            "words_count": 6186,
+            "tokens_count": 63989,
+            "fertility": 10.344164241836404,
+            "pcw": 0.8322017458777885
+        },
+        {
+            "model": "sarvam1",
+            "words_count": 6186,
+            "tokens_count": 18122,
+            "fertility": 2.9295182670546396,
+            "pcw": 0.6618170061429033
+        },
+        {
+            "model": "gpt-oss",
+            "words_count": 6186,
+            "tokens_count": 33800,
+            "fertility": 5.4639508567733595,
+            "pcw": 0.816844487552538
+        },
+        {
+            "model": "o200k_base",
+            "words_count": 6186,
+            "tokens_count": 33800,
+            "fertility": 5.4639508567733595,
+            "pcw": 0.816844487552538
+        },
+        {
+            "model": "cl100k_base",
+            "words_count": 6186,
+            "tokens_count": 83638,
+            "fertility": 13.520530229550598,
+            "pcw": 0.8297769156159069
+        },
+        {
+            "model": "p50k_base",
+            "words_count": 6186,
+            "tokens_count": 143867,
+            "fertility": 23.256870352408665,
+            "pcw": 0.8309085030714517
+        },
+        {
+            "model": "tiny-aya",
+            "words_count": 6186,
+            "tokens_count": 96750,
+            "fertility": 15.64015518913676,
+            "pcw": 0.8352731975428387
+        },
+        {
+            "model": "TWO-sutra-mlt256",
+            "words_count": 6186,
+            "tokens_count": 18186,
+            "fertility": 2.9398642095053344,
+            "pcw": 0.6632719043000324
+        },
+        {
+            "model": "Param2-17B-MOE",
+            "words_count": 6186,
+            "tokens_count": 21960,
+            "fertility": 3.5499515033947624,
+            "pcw": 0.7964759133527319
+        },
+        {
+            "model": "Krutrim-2",
+            "words_count": 6186,
+            "tokens_count": 29055,
+            "fertility": 4.696896217264792,
+            "pcw": 0.8318784351762043
+        }
+    ],
+    "pan_Guru": [
+        {
+            "model": "gemma",
+            "words_count": 23441,
+            "tokens_count": 76568,
+            "fertility": 3.2664135489100294,
+            "pcw": 0.8153662386416962
+        },
+        {
+            "model": "gemma3",
+            "words_count": 23441,
+            "tokens_count": 69213,
+            "fertility": 2.9526470713706754,
+            "pcw": 0.7822618488972314
+        },
+        {
+            "model": "llama4",
+            "words_count": 23441,
+            "tokens_count": 78327,
+            "fertility": 3.341453009683887,
+            "pcw": 0.8184804402542554
+        },
+        {
+            "model": "llama3",
+            "words_count": 23441,
+            "tokens_count": 174499,
+            "fertility": 7.4441790026022785,
+            "pcw": 0.8872488375069323
+        },
+        {
+            "model": "llama2",
+            "words_count": 23441,
+            "tokens_count": 240624,
+            "fertility": 10.265091079732093,
+            "pcw": 0.9310183012670108
+        },
+        {
+            "model": "ministral",
+            "words_count": 23441,
+            "tokens_count": 76508,
+            "fertility": 3.263853931146282,
+            "pcw": 0.8221065654195641
+        },
+        {
+            "model": "mistral_small_tekken",
+            "words_count": 23441,
+            "tokens_count": 76508,
+            "fertility": 3.263853931146282,
+            "pcw": 0.8221065654195641
+        },
+        {
+            "model": "mistral_sp",
+            "words_count": 23441,
+            "tokens_count": 257338,
+            "fertility": 10.97811526811996,
+            "pcw": 0.9310183012670108
+        },
+        {
+            "model": "olmo",
+            "words_count": 23441,
+            "tokens_count": 175646,
+            "fertility": 7.493110362185914,
+            "pcw": 0.9232967876797065
+        },
+        {
+            "model": "qwen",
+            "words_count": 23441,
+            "tokens_count": 157185,
+            "fertility": 6.705558636576938,
+            "pcw": 0.8920267906659273
+        },
+        {
+            "model": "sarvam1",
+            "words_count": 23441,
+            "tokens_count": 39157,
+            "fertility": 1.6704492129175377,
+            "pcw": 0.332707648991084
+        },
+        {
+            "model": "gpt-oss",
+            "words_count": 23441,
+            "tokens_count": 76978,
+            "fertility": 3.283904270295636,
+            "pcw": 0.8772236679322555
+        },
+        {
+            "model": "o200k_base",
+            "words_count": 23441,
+            "tokens_count": 76978,
+            "fertility": 3.283904270295636,
+            "pcw": 0.8772236679322555
+        },
+        {
+            "model": "cl100k_base",
+            "words_count": 23441,
+            "tokens_count": 175646,
+            "fertility": 7.493110362185914,
+            "pcw": 0.9232967876797065
+        },
+        {
+            "model": "p50k_base",
+            "words_count": 23441,
+            "tokens_count": 175679,
+            "fertility": 7.494518151955974,
+            "pcw": 0.9234247685678939
+        },
+        {
+            "model": "tiny-aya",
+            "words_count": 23441,
+            "tokens_count": 85613,
+            "fertility": 3.652275926794932,
+            "pcw": 0.8701847190819504
+        },
+        {
+            "model": "TWO-sutra-mlt256",
+            "words_count": 23441,
+            "tokens_count": 36646,
+            "fertility": 1.563329209504714,
+            "pcw": 0.3013096710891174
+        },
+        {
+            "model": "Param2-17B-MOE",
+            "words_count": 23441,
+            "tokens_count": 55357,
+            "fertility": 2.3615460091293032,
+            "pcw": 0.7109764941768696
+        },
+        {
+            "model": "Krutrim-2",
+            "words_count": 23441,
+            "tokens_count": 76508,
+            "fertility": 3.263853931146282,
+            "pcw": 0.8221065654195641
+        }
+    ],
+    "tam_Taml": [
+        {
+            "model": "gemma",
+            "words_count": 10046,
+            "tokens_count": 40358,
+            "fertility": 4.017320326498108,
+            "pcw": 0.8341628508859248
+        },
+        {
+            "model": "gemma3",
+            "words_count": 10046,
+            "tokens_count": 28759,
+            "fertility": 2.862731435397173,
+            "pcw": 0.7761298029066295
+        },
+        {
+            "model": "llama4",
+            "words_count": 10046,
+            "tokens_count": 57038,
+            "fertility": 5.677682659765081,
+            "pcw": 0.8370495719689429
+        },
+        {
+            "model": "llama3",
+            "words_count": 10046,
+            "tokens_count": 109685,
+            "fertility": 10.918275930718695,
+            "pcw": 0.8375472825004977
+        },
+        {
+            "model": "llama2",
+            "words_count": 10046,
+            "tokens_count": 96371,
+            "fertility": 9.592972327294445,
+            "pcw": 0.8442166036233326
+        },
+        {
+            "model": "ministral",
+            "words_count": 10046,
+            "tokens_count": 39878,
+            "fertility": 3.9695401154688432,
+            "pcw": 0.839737208839339
+        },
+        {
+            "model": "mistral_small_tekken",
+            "words_count": 10046,
+            "tokens_count": 39878,
+            "fertility": 3.9695401154688432,
+            "pcw": 0.839737208839339
+        },
+        {
+            "model": "mistral_sp",
+            "words_count": 10046,
+            "tokens_count": 92949,
+            "fertility": 9.252339239498308,
+            "pcw": 0.8442166036233326
+        },
+        {
+            "model": "olmo",
+            "words_count": 10046,
+            "tokens_count": 109685,
+            "fertility": 10.918275930718695,
+            "pcw": 0.8375472825004977
+        },
+        {
+            "model": "qwen",
+            "words_count": 10046,
+            "tokens_count": 82889,
+            "fertility": 8.250945650009955,
+            "pcw": 0.8412303404340036
+        },
+        {
+            "model": "sarvam1",
+            "words_count": 10046,
+            "tokens_count": 23949,
+            "fertility": 2.3839339040414096,
+            "pcw": 0.5945650009954211
+        },
+        {
+            "model": "gpt-oss",
+            "words_count": 10046,
+            "tokens_count": 52511,
+            "fertility": 5.227055544495322,
+            "pcw": 0.8337646824606809
+        },
+        {
+            "model": "o200k_base",
+            "words_count": 10046,
+            "tokens_count": 52511,
+            "fertility": 5.227055544495322,
+            "pcw": 0.8337646824606809
+        },
+        {
+            "model": "cl100k_base",
+            "words_count": 10046,
+            "tokens_count": 109685,
+            "fertility": 10.918275930718695,
+            "pcw": 0.8375472825004977
+        },
+        {
+            "model": "p50k_base",
+            "words_count": 10046,
+            "tokens_count": 213199,
+            "fertility": 21.222277523392396,
+            "pcw": 0.8375472825004977
+        },
+        {
+            "model": "tiny-aya",
+            "words_count": 10046,
+            "tokens_count": 70846,
+            "fertility": 7.052160063706948,
+            "pcw": 0.8374477403941868
+        },
+        {
+            "model": "TWO-sutra-mlt256",
+            "words_count": 10046,
+            "tokens_count": 26289,
+            "fertility": 2.616862432809078,
+            "pcw": 0.6604618753732829
+        },
+        {
+            "model": "Param2-17B-MOE",
+            "words_count": 10046,
+            "tokens_count": 33760,
+            "fertility": 3.3605415090583315,
+            "pcw": 0.8081823611387617
+        },
+        {
+            "model": "Krutrim-2",
+            "words_count": 10046,
+            "tokens_count": 39878,
+            "fertility": 3.9695401154688432,
+            "pcw": 0.839737208839339
+        }
+    ]
+}

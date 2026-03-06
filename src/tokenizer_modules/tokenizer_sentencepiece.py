@@ -55,7 +55,7 @@ class SentencePieceTokenizer:
         self.save_path = vocabulary_path / f"{model_path.stem.replace('_tokenizer', '')}_vocab.json"
 
     def __repr__(self) -> str:
-        return f"{self.__class__.__name__}(vocab_size={self.n_words})"
+        return f"{self.__class__.__name__}(vocab_size={self.n_words}, backend={type(self.sp_model).__name__})"
 
     def encode(self, s: str, add_special_tokens: bool = False) -> List[int]:
         assert type(s) is str

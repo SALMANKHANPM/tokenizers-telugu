@@ -127,7 +127,7 @@ class QWenTokenizer(PreTrainedTokenizer):
 
 
     def __repr__(self) -> str:
-        return f"{self.__class__.__name__}(vocab_size={self.vocab_size})"
+        return f"{self.__class__.__name__}(vocab_size={self.vocab_size}, backend={type(self.tokenizer).__name__})"
 
     def __getstate__(self):
         # for pickle lovers

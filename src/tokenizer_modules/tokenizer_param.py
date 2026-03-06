@@ -19,7 +19,7 @@ class ParamTokenizer:
         #self.save_path = vocabulary_path / f"{model_path.name.rstrip("tokenizer.model")}vocab.json"
         
     def __repr__(self) -> str:
-        return f"{self.__class__.__name__}(vocab_size={self.tokenizer.vocab_size})"
+        return f"{self.__class__.__name__}(vocab_size={self.tokenizer.vocab_size}, backend={type(self.tokenizer).__name__})"
     
     def encode(self, text: str, add_special_tokens: bool = False) -> List[int]:
         return self.tokenizer.encode(text, add_special_tokens=add_special_tokens)

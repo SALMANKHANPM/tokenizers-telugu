@@ -73,7 +73,7 @@ class OpenAITokenizer:
         
         self.save_path = vocabulary_path / f"{self.model_name}_vocab.json"
     def __repr__(self) -> str:
-        return f"{self.__class__.__name__}(model={self.model_name}, vocab_size={self.tokenizer.n_vocab})"
+        return f"{self.__class__.__name__}(model={self.model_name}, vocab_size={self.tokenizer.n_vocab}, backend={type(self.tokenizer).__name__})"
 
     @staticmethod
     def model_to_encoding(model_name: str) -> str | None:

@@ -5,6 +5,7 @@ from datatrove.utils.word_tokenizers import WordTokenizer, load_word_tokenizer
 from src.data.models import model_id
 from src.data.languages import language_codes
 import numpy as np
+from pathlib import Path
 
 class TokenizerEvaluator:
     def __init__(self, dataset_id: str, language_codes: list[tuple[str, str]], model_id: list[tuple[str, str, str]]):
@@ -12,6 +13,7 @@ class TokenizerEvaluator:
         self.language_codes = language_codes
         self.model_id = model_id
         self.results = defaultdict(list)
+        self.results_path = Path("src/data/tokenizer-eval")
 
     def load_model(self, model_id: str):
         for model, model_path, tokenizer_class in model_id:
@@ -31,7 +33,7 @@ class TokenizerEvaluator:
     def process(self):
         for lang_id, lang_code in self.language_codes:
             dataset = load_dataset(self.dataset_id, lang_code, split="train")
-            if dataset.num_rows < 100:
+            if dataset.num_rows < 200:
                 continue
             ds_iter = iter(dataset)
             text = "\n".join([next(ds_iter)["text"] for _ in range(100)])
@@ -55,9 +57,12 @@ class TokenizerEvaluator:
         return self.results
     
     def save_results(self, results: dict):
-        with open("results.json", "w") as f:
+        self.results_path.mkdir(parents=True, exist_ok=True)
+        with open(self.results_path / "results.json", "w") as f:
             json.dump(results, f, indent=4)
     
+        print(f"Results saved to {self.results_path / 'results.json'}")
+        
 if __name__ == "__main__":
     tokenizer_evaluator = TokenizerEvaluator(dataset_id="salmankhanpm/tokenizer-eval-set", language_codes=language_codes, model_id=model_id)
     results = tokenizer_evaluator.process()

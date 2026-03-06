@@ -53,7 +53,7 @@ class OLMoTokenizer:
         self.save_path = vocabulary_path / f"{tokenizer_name}_vocab.json"
 
     def __repr__(self) -> str:
-        return f"{self.__class__.__name__}(vocab_size={self.vocab_size})"
+        return f"{self.__class__.__name__}(vocab_size={self.vocab_size}, backend={type(self.base_tokenizer.model).__name__ if hasattr(self.base_tokenizer, 'model') else type(self.base_tokenizer).__name__})"
 
     @property
     def vocab_size(self) -> int:

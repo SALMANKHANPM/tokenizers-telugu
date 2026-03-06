@@ -21,7 +21,7 @@ class MistralTokenizer:
         self.save_path = vocabulary_path / f"{model_path.stem.replace('_tokenizer', '')}_vocab.json"
         
     def __repr__(self) -> str:
-        return f"{self.__class__.__name__}(vocab_size={self.tokenizer.n_words})"
+        return f"{self.__class__.__name__}(vocab_size={self.tokenizer.n_words}, backend={type(self.tokenizer).__name__})"
 
     def encode(self, s: str, add_special_tokens: bool = False) -> List[int]:
         return self.tokenizer.encode(s, bos=add_special_tokens, eos=add_special_tokens)
@@ -59,7 +59,7 @@ class MistralTekkenizer:
         self.save_path = vocabulary_path / f"{model_path.stem.replace('_tokenizer', '')}_vocab.json"
         
     def __repr__(self) -> str:
-        return f"{self.__class__.__name__}(vocab_size={self.tokenizer.n_words})"
+        return f"{self.__class__.__name__}(vocab_size={self.tokenizer.n_words}, backend={type(self.tokenizer).__name__})"
 
     def encode(self, s: str, add_special_tokens: bool = False) -> List[int]:
         return self.tokenizer.encode(s, bos=add_special_tokens, eos=add_special_tokens)
