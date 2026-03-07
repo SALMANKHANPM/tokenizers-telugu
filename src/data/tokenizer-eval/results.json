@@ -113,6 +113,13 @@
             "pcw": 0.7819141547437144
         },
         {
+            "model": "tiny-aya-fire",
+            "words_count": 43194,
+            "tokens_count": 216686,
+            "fertility": 5.016576376348567,
+            "pcw": 0.7819141547437144
+        },
+        {
             "model": "TWO-sutra-mlt256",
             "words_count": 43194,
             "tokens_count": 89808,
@@ -132,6 +139,13 @@
             "tokens_count": 126654,
             "fertility": 2.932212807334352,
             "pcw": 0.7224151502523498
+        },
+        {
+            "model": "Sarvam-30B",
+            "words_count": 43194,
+            "tokens_count": 102898,
+            "fertility": 2.3822290132888826,
+            "pcw": 0.6589804139463814
         }
     ],
     "ben_Beng": [
@@ -248,6 +262,13 @@
             "pcw": 0.795071563006084
         },
         {
+            "model": "tiny-aya-fire",
+            "words_count": 22847,
+            "tokens_count": 112691,
+            "fertility": 4.93242001138005,
+            "pcw": 0.795071563006084
+        },
+        {
             "model": "TWO-sutra-mlt256",
             "words_count": 22847,
             "tokens_count": 47556,
@@ -267,6 +288,13 @@
             "tokens_count": 71573,
             "fertility": 3.1327088895697464,
             "pcw": 0.7962095679957981
+        },
+        {
+            "model": "Sarvam-30B",
+            "words_count": 22847,
+            "tokens_count": 48038,
+            "fertility": 2.102595526765002,
+            "pcw": 0.5857661837440364
         }
     ],
     "guj_Gujr": [
@@ -383,6 +411,13 @@
             "pcw": 0.7902004102887802
         },
         {
+            "model": "tiny-aya-fire",
+            "words_count": 12674,
+            "tokens_count": 58527,
+            "fertility": 4.617879122613224,
+            "pcw": 0.7902004102887802
+        },
+        {
             "model": "TWO-sutra-mlt256",
             "words_count": 12674,
             "tokens_count": 26296,
@@ -402,6 +437,13 @@
             "tokens_count": 47117,
             "fertility": 3.717610856872337,
             "pcw": 0.8185261164588922
+        },
+        {
+            "model": "Sarvam-30B",
+            "words_count": 12674,
+            "tokens_count": 29461,
+            "fertility": 2.3245226447845986,
+            "pcw": 0.6435221713744674
         }
     ],
     "hin_Deva": [
@@ -518,6 +560,13 @@
             "pcw": 0.8284115635685422
         },
         {
+            "model": "tiny-aya-fire",
+            "words_count": 3217,
+            "tokens_count": 12297,
+            "fertility": 3.8225054398507927,
+            "pcw": 0.8284115635685422
+        },
+        {
             "model": "TWO-sutra-mlt256",
             "words_count": 3217,
             "tokens_count": 5681,
@@ -537,6 +586,13 @@
             "tokens_count": 8106,
             "fertility": 2.519738887161952,
             "pcw": 0.6611750077712154
+        },
+        {
+            "model": "Sarvam-30B",
+            "words_count": 3217,
+            "tokens_count": 5794,
+            "fertility": 1.8010568852968605,
+            "pcw": 0.42430836182778986
         }
     ],
     "kan_Knda": [
@@ -653,6 +709,13 @@
             "pcw": 0.8413994535347508
         },
         {
+            "model": "tiny-aya-fire",
+            "words_count": 31841,
+            "tokens_count": 446389,
+            "fertility": 14.019314720015075,
+            "pcw": 0.8413994535347508
+        },
+        {
             "model": "TWO-sutra-mlt256",
             "words_count": 31841,
             "tokens_count": 79376,
@@ -672,6 +735,13 @@
             "tokens_count": 118828,
             "fertility": 3.731917967400521,
             "pcw": 0.8294965610376559
+        },
+        {
+            "model": "Sarvam-30B",
+            "words_count": 31841,
+            "tokens_count": 86969,
+            "fertility": 2.7313526585220314,
+            "pcw": 0.7188844571464464
         }
     ],
     "mal_Mlym": [
@@ -788,6 +858,13 @@
             "pcw": 0.8352731975428387
         },
         {
+            "model": "tiny-aya-fire",
+            "words_count": 6186,
+            "tokens_count": 96750,
+            "fertility": 15.64015518913676,
+            "pcw": 0.8352731975428387
+        },
+        {
             "model": "TWO-sutra-mlt256",
             "words_count": 6186,
             "tokens_count": 18186,
@@ -807,6 +884,13 @@
             "tokens_count": 29055,
             "fertility": 4.696896217264792,
             "pcw": 0.8318784351762043
+        },
+        {
+            "model": "Sarvam-30B",
+            "words_count": 6186,
+            "tokens_count": 20092,
+            "fertility": 3.2479793081150987,
+            "pcw": 0.7468477206595538
         }
     ],
     "mar_Deva": [
@@ -923,6 +1007,13 @@
             "pcw": 0.7190096018988025
         },
         {
+            "model": "tiny-aya-fire",
+            "words_count": 18538,
+            "tokens_count": 80747,
+            "fertility": 4.355755744956306,
+            "pcw": 0.7190096018988025
+        },
+        {
             "model": "TWO-sutra-mlt256",
             "words_count": 18538,
             "tokens_count": 36701,
@@ -942,6 +1033,13 @@
             "tokens_count": 53802,
             "fertility": 2.902254827921027,
             "pcw": 0.6882619484302513
+        },
+        {
+            "model": "Sarvam-30B",
+            "words_count": 18538,
+            "tokens_count": 40126,
+            "fertility": 2.164526917682598,
+            "pcw": 0.6072931276297335
         }
     ],
     "pan_Guru": [
@@ -1058,6 +1156,13 @@
             "pcw": 0.8701847190819504
         },
         {
+            "model": "tiny-aya-fire",
+            "words_count": 23441,
+            "tokens_count": 85613,
+            "fertility": 3.652275926794932,
+            "pcw": 0.8701847190819504
+        },
+        {
             "model": "TWO-sutra-mlt256",
             "words_count": 23441,
             "tokens_count": 36646,
@@ -1077,6 +1182,13 @@
             "tokens_count": 76508,
             "fertility": 3.263853931146282,
             "pcw": 0.8221065654195641
+        },
+        {
+            "model": "Sarvam-30B",
+            "words_count": 23441,
+            "tokens_count": 47905,
+            "fertility": 2.043641482871891,
+            "pcw": 0.5632865492086515
         }
     ],
     "tam_Taml": [
@@ -1193,6 +1305,13 @@
             "pcw": 0.8374477403941868
         },
         {
+            "model": "tiny-aya-fire",
+            "words_count": 10046,
+            "tokens_count": 70846,
+            "fertility": 7.052160063706948,
+            "pcw": 0.8374477403941868
+        },
+        {
             "model": "TWO-sutra-mlt256",
             "words_count": 10046,
             "tokens_count": 26289,
@@ -1212,6 +1331,13 @@
             "tokens_count": 39878,
             "fertility": 3.9695401154688432,
             "pcw": 0.839737208839339
+        },
+        {
+            "model": "Sarvam-30B",
+            "words_count": 10046,
+            "tokens_count": 28759,
+            "fertility": 2.862731435397173,
+            "pcw": 0.7761298029066295
         }
     ],
     "ory_Orya": [
@@ -1328,6 +1454,13 @@
             "pcw": 0.8283359849875577
         },
         {
+            "model": "tiny-aya-fire",
+            "words_count": 24513,
+            "tokens_count": 229906,
+            "fertility": 9.378941785991106,
+            "pcw": 0.8283359849875577
+        },
+        {
             "model": "TWO-sutra-mlt256",
             "words_count": 24513,
             "tokens_count": 51503,
@@ -1347,6 +1480,13 @@
             "tokens_count": 356541,
             "fertility": 14.544976135111982,
             "pcw": 0.829437441357647
+        },
+        {
+            "model": "Sarvam-30B",
+            "words_count": 24513,
+            "tokens_count": 57263,
+            "fertility": 2.336025782237996,
+            "pcw": 0.6481458817770163
         }
     ]
 }
