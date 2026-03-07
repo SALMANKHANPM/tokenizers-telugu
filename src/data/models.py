@@ -27,8 +27,10 @@ model_id = [
     ("cl100k_base", model_path / "openai" / "cl100k_base_tokenizer.tiktoken", OpenAITokenizer),
     ("p50k_base", model_path / "openai" / "p50k_base_tokenizer.tiktoken", OpenAITokenizer),
     ("tiny-aya", "CohereLabs/tiny-aya-global", HFTokenizer),
+    ("tiny-aya-fire", "CohereLabs/tiny-aya-fire", HFTokenizer),
     ("TWO-sutra-mlt256", "TWO/sutra-mlt256-v2", HFTokenizer),
     ("Param2-17B-MOE", "bharatgenai/Param2-17B-A2.4B-Thinking", HFTokenizer),
     ("Krutrim-2", "krutrim-ai-labs/Krutrim-2-instruct", HFTokenizer),
-    #("Dhi-5B-Base", "Shaligram-Dewangan/Dhi-5B-Base", HFTokenizer), # need to impl 
+   # ("Dhi-5B-Base", "Shaligram-Dewangan/Dhi-5B-Base", HFTokenizer), # need to impl 
+    ("Sarvam-30B", "sarvamai/sarvam-30b", HFTokenizer),
 ]
