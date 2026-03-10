@@ -22,7 +22,11 @@ class HFTokenizer:
         self.save_path = vocabulary_path / f"{model_name.replace('/', '_')}_vocab.json"
 
     def __repr__(self) -> str:
-        return f"{self.__class__.__name__}(model={self.tokenizer.name_or_path}, vocab_size={self.tokenizer.vocab_size}, tokenizer_backend={type(self.tokenizer.backend_tokenizer.model).__name__})"
+        try:
+            backend = type(self.tokenizer.backend_tokenizer.model).__name__
+        except AttributeError:
+            backend = type(self.tokenizer).__name__
+        return f"{self.__class__.__name__}(model={self.tokenizer.name_or_path}, vocab_size={self.tokenizer.vocab_size}, tokenizer_backend={backend})"
 
     def encode(self, text: str, add_special_tokens: bool = False) -> List[int]:
         return self.tokenizer.encode(text, add_special_tokens=add_special_tokens)

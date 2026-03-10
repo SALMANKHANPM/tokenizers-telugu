@@ -106,13 +106,6 @@
             "pcw": 0.7618419224892347
         },
         {
-            "model": "tiny-aya",
-            "words_count": 43194,
-            "tokens_count": 216686,
-            "fertility": 5.016576376348567,
-            "pcw": 0.7819141547437144
-        },
-        {
             "model": "tiny-aya-fire",
             "words_count": 43194,
             "tokens_count": 216686,
@@ -141,11 +134,46 @@
             "pcw": 0.7224151502523498
         },
         {
-            "model": "Sarvam-30B",
+            "model": "Sarvam-33B",
             "words_count": 43194,
             "tokens_count": 102898,
             "fertility": 2.3822290132888826,
             "pcw": 0.6589804139463814
+        },
+        {
+            "model": "Phi-4-mini",
+            "words_count": 43194,
+            "tokens_count": 127175,
+            "fertility": 2.944274667777932,
+            "pcw": 0.7021808584525628
+        },
+        {
+            "model": "Phi-3.5 mini",
+            "words_count": 43194,
+            "tokens_count": 640550,
+            "fertility": 14.829605963791268,
+            "pcw": 0.8016854192711951
+        },
+        {
+            "model": "GLM-4.6V",
+            "words_count": 43194,
+            "tokens_count": 432286,
+            "fertility": 10.008010371810899,
+            "pcw": 0.7653377783951475
+        },
+        {
+            "model": "Kimi-VL-A3B-Thinking-2506",
+            "words_count": 43194,
+            "tokens_count": 207928,
+            "fertility": 4.813816733805621,
+            "pcw": 0.7602907811270084
+        },
+        {
+            "model": "Qwen3.5-0.8B",
+            "words_count": 43194,
+            "tokens_count": 159387,
+            "fertility": 3.6900263925545214,
+            "pcw": 0.7553595406769459
         }
     ],
     "ben_Beng": [
@@ -255,13 +283,6 @@
             "pcw": 0.8907952904101195
         },
         {
-            "model": "tiny-aya",
-            "words_count": 22847,
-            "tokens_count": 112691,
-            "fertility": 4.93242001138005,
-            "pcw": 0.795071563006084
-        },
-        {
             "model": "tiny-aya-fire",
             "words_count": 22847,
             "tokens_count": 112691,
@@ -290,11 +311,46 @@
             "pcw": 0.7962095679957981
         },
         {
-            "model": "Sarvam-30B",
+            "model": "Sarvam-33B",
             "words_count": 22847,
             "tokens_count": 48038,
             "fertility": 2.102595526765002,
             "pcw": 0.5857661837440364
+        },
+        {
+            "model": "Phi-4-mini",
+            "words_count": 22847,
+            "tokens_count": 65369,
+            "fertility": 2.8611633912548693,
+            "pcw": 0.7616317240775594
+        },
+        {
+            "model": "Phi-3.5 mini",
+            "words_count": 22847,
+            "tokens_count": 180397,
+            "fertility": 7.895872543441152,
+            "pcw": 0.8907952904101195
+        },
+        {
+            "model": "GLM-4.6V",
+            "words_count": 22847,
+            "tokens_count": 168702,
+            "fertility": 7.383989145183175,
+            "pcw": 0.8906202127193942
+        },
+        {
+            "model": "Kimi-VL-A3B-Thinking-2506",
+            "words_count": 22847,
+            "tokens_count": 91526,
+            "fertility": 4.006040180330022,
+            "pcw": 0.8127544097693351
+        },
+        {
+            "model": "Qwen3.5-0.8B",
+            "words_count": 22847,
+            "tokens_count": 80070,
+            "fertility": 3.5046176740928785,
+            "pcw": 0.8018558235216877
         }
     ],
     "guj_Gujr": [
@@ -404,13 +460,6 @@
             "pcw": 0.8457471989900583
         },
         {
-            "model": "tiny-aya",
-            "words_count": 12674,
-            "tokens_count": 58527,
-            "fertility": 4.617879122613224,
-            "pcw": 0.7902004102887802
-        },
-        {
             "model": "tiny-aya-fire",
             "words_count": 12674,
             "tokens_count": 58527,
@@ -439,11 +488,46 @@
             "pcw": 0.8185261164588922
         },
         {
-            "model": "Sarvam-30B",
+            "model": "Sarvam-33B",
             "words_count": 12674,
             "tokens_count": 29461,
             "fertility": 2.3245226447845986,
             "pcw": 0.6435221713744674
+        },
+        {
+            "model": "Phi-4-mini",
+            "words_count": 12674,
+            "tokens_count": 34325,
+            "fertility": 2.708300457629793,
+            "pcw": 0.7478302035663563
+        },
+        {
+            "model": "Phi-3.5 mini",
+            "words_count": 12674,
+            "tokens_count": 165297,
+            "fertility": 13.042212403345431,
+            "pcw": 0.8457471989900583
+        },
+        {
+            "model": "GLM-4.6V",
+            "words_count": 12674,
+            "tokens_count": 113157,
+            "fertility": 8.928278365157015,
+            "pcw": 0.8456682973015622
+        },
+        {
+            "model": "Kimi-VL-A3B-Thinking-2506",
+            "words_count": 12674,
+            "tokens_count": 60743,
+            "fertility": 4.792725264320657,
+            "pcw": 0.841959917942244
+        },
+        {
+            "model": "Qwen3.5-0.8B",
+            "words_count": 12674,
+            "tokens_count": 49150,
+            "fertility": 3.878017989584977,
+            "pcw": 0.8014833517437273
         }
     ],
     "hin_Deva": [
@@ -553,13 +637,6 @@
             "pcw": 0.9319241529375194
         },
         {
-            "model": "tiny-aya",
-            "words_count": 3217,
-            "tokens_count": 12297,
-            "fertility": 3.8225054398507927,
-            "pcw": 0.8284115635685422
-        },
-        {
             "model": "tiny-aya-fire",
             "words_count": 3217,
             "tokens_count": 12297,
@@ -588,11 +665,46 @@
             "pcw": 0.6611750077712154
         },
         {
-            "model": "Sarvam-30B",
+            "model": "Sarvam-33B",
             "words_count": 3217,
             "tokens_count": 5794,
             "fertility": 1.8010568852968605,
             "pcw": 0.42430836182778986
+        },
+        {
+            "model": "Phi-4-mini",
+            "words_count": 3217,
+            "tokens_count": 7139,
+            "fertility": 2.2191482747901774,
+            "pcw": 0.5958967982592478
+        },
+        {
+            "model": "Phi-3.5 mini",
+            "words_count": 3217,
+            "tokens_count": 17854,
+            "fertility": 5.5498912029841465,
+            "pcw": 0.9409387628225054
+        },
+        {
+            "model": "GLM-4.6V",
+            "words_count": 3217,
+            "tokens_count": 16162,
+            "fertility": 5.023935343487722,
+            "pcw": 0.9325458501709667
+        },
+        {
+            "model": "Kimi-VL-A3B-Thinking-2506",
+            "words_count": 3217,
+            "tokens_count": 10030,
+            "fertility": 3.1178116257382653,
+            "pcw": 0.786136151694125
+        },
+        {
+            "model": "Qwen3.5-0.8B",
+            "words_count": 3217,
+            "tokens_count": 8666,
+            "fertility": 2.6938141125271993,
+            "pcw": 0.7050046627292509
         }
     ],
     "kan_Knda": [
@@ -702,13 +814,6 @@
             "pcw": 0.8398605571433058
         },
         {
-            "model": "tiny-aya",
-            "words_count": 31841,
-            "tokens_count": 446389,
-            "fertility": 14.019314720015075,
-            "pcw": 0.8413994535347508
-        },
-        {
             "model": "tiny-aya-fire",
             "words_count": 31841,
             "tokens_count": 446389,
@@ -737,11 +842,46 @@
             "pcw": 0.8294965610376559
         },
         {
-            "model": "Sarvam-30B",
+            "model": "Sarvam-33B",
             "words_count": 31841,
             "tokens_count": 86969,
             "fertility": 2.7313526585220314,
             "pcw": 0.7188844571464464
+        },
+        {
+            "model": "Phi-4-mini",
+            "words_count": 31841,
+            "tokens_count": 107940,
+            "fertility": 3.3899689080116833,
+            "pcw": 0.813008385415031
+        },
+        {
+            "model": "Phi-3.5 mini",
+            "words_count": 31841,
+            "tokens_count": 559576,
+            "fertility": 17.57407116610659,
+            "pcw": 0.8425614773405358
+        },
+        {
+            "model": "GLM-4.6V",
+            "words_count": 31841,
+            "tokens_count": 398858,
+            "fertility": 12.526553814264627,
+            "pcw": 0.8397977450456958
+        },
+        {
+            "model": "Kimi-VL-A3B-Thinking-2506",
+            "words_count": 31841,
+            "tokens_count": 170358,
+            "fertility": 5.350271662322164,
+            "pcw": 0.8366885462140008
+        },
+        {
+            "model": "Qwen3.5-0.8B",
+            "words_count": 31841,
+            "tokens_count": 149027,
+            "fertility": 4.680349235262711,
+            "pcw": 0.8261047077667159
         }
     ],
     "mal_Mlym": [
@@ -851,13 +991,6 @@
             "pcw": 0.8309085030714517
         },
         {
-            "model": "tiny-aya",
-            "words_count": 6186,
-            "tokens_count": 96750,
-            "fertility": 15.64015518913676,
-            "pcw": 0.8352731975428387
-        },
-        {
             "model": "tiny-aya-fire",
             "words_count": 6186,
             "tokens_count": 96750,
@@ -886,11 +1019,46 @@
             "pcw": 0.8318784351762043
         },
         {
-            "model": "Sarvam-30B",
+            "model": "Sarvam-33B",
             "words_count": 6186,
             "tokens_count": 20092,
             "fertility": 3.2479793081150987,
             "pcw": 0.7468477206595538
+        },
+        {
+            "model": "Phi-4-mini",
+            "words_count": 6186,
+            "tokens_count": 23819,
+            "fertility": 3.850468800517297,
+            "pcw": 0.7937277723892661
+        },
+        {
+            "model": "Phi-3.5 mini",
+            "words_count": 6186,
+            "tokens_count": 62925,
+            "fertility": 10.172162948593598,
+            "pcw": 0.8370514064015518
+        },
+        {
+            "model": "GLM-4.6V",
+            "words_count": 6186,
+            "tokens_count": 83666,
+            "fertility": 13.525056579372777,
+            "pcw": 0.8315551244746201
+        },
+        {
+            "model": "Kimi-VL-A3B-Thinking-2506",
+            "words_count": 6186,
+            "tokens_count": 33601,
+            "fertility": 5.431781441965729,
+            "pcw": 0.8271904300032331
+        },
+        {
+            "model": "Qwen3.5-0.8B",
+            "words_count": 6186,
+            "tokens_count": 31839,
+            "fertility": 5.146944713870029,
+            "pcw": 0.8283220174587779
         }
     ],
     "mar_Deva": [
@@ -1000,13 +1168,6 @@
             "pcw": 0.7583342323875283
         },
         {
-            "model": "tiny-aya",
-            "words_count": 18538,
-            "tokens_count": 80747,
-            "fertility": 4.355755744956306,
-            "pcw": 0.7190096018988025
-        },
-        {
             "model": "tiny-aya-fire",
             "words_count": 18538,
             "tokens_count": 80747,
@@ -1035,11 +1196,46 @@
             "pcw": 0.6882619484302513
         },
         {
-            "model": "Sarvam-30B",
+            "model": "Sarvam-33B",
             "words_count": 18538,
             "tokens_count": 40126,
             "fertility": 2.164526917682598,
             "pcw": 0.6072931276297335
+        },
+        {
+            "model": "Phi-4-mini",
+            "words_count": 18538,
+            "tokens_count": 48549,
+            "fertility": 2.618890926745064,
+            "pcw": 0.6634480526486136
+        },
+        {
+            "model": "Phi-3.5 mini",
+            "words_count": 18538,
+            "tokens_count": 111310,
+            "fertility": 6.004423346639335,
+            "pcw": 0.7584421188909267
+        },
+        {
+            "model": "GLM-4.6V",
+            "words_count": 18538,
+            "tokens_count": 102814,
+            "fertility": 5.546121480202826,
+            "pcw": 0.752400474700615
+        },
+        {
+            "model": "Kimi-VL-A3B-Thinking-2506",
+            "words_count": 18538,
+            "tokens_count": 63245,
+            "fertility": 3.41164095371669,
+            "pcw": 0.7059013917358938
+        },
+        {
+            "model": "Qwen3.5-0.8B",
+            "words_count": 18538,
+            "tokens_count": 56565,
+            "fertility": 3.051300032365951,
+            "pcw": 0.6895026432193333
         }
     ],
     "pan_Guru": [
@@ -1149,13 +1345,6 @@
             "pcw": 0.9234247685678939
         },
         {
-            "model": "tiny-aya",
-            "words_count": 23441,
-            "tokens_count": 85613,
-            "fertility": 3.652275926794932,
-            "pcw": 0.8701847190819504
-        },
-        {
             "model": "tiny-aya-fire",
             "words_count": 23441,
             "tokens_count": 85613,
@@ -1184,11 +1373,46 @@
             "pcw": 0.8221065654195641
         },
         {
-            "model": "Sarvam-30B",
+            "model": "Sarvam-33B",
             "words_count": 23441,
             "tokens_count": 47905,
             "fertility": 2.043641482871891,
             "pcw": 0.5632865492086515
+        },
+        {
+            "model": "Phi-4-mini",
+            "words_count": 23441,
+            "tokens_count": 66989,
+            "fertility": 2.8577705729277763,
+            "pcw": 0.7794036090610469
+        },
+        {
+            "model": "Phi-3.5 mini",
+            "words_count": 23441,
+            "tokens_count": 240624,
+            "fertility": 10.265091079732093,
+            "pcw": 0.9310183012670108
+        },
+        {
+            "model": "GLM-4.6V",
+            "words_count": 23441,
+            "tokens_count": 175425,
+            "fertility": 7.483682436756111,
+            "pcw": 0.9236807303442686
+        },
+        {
+            "model": "Kimi-VL-A3B-Thinking-2506",
+            "words_count": 23441,
+            "tokens_count": 89085,
+            "fertility": 3.8003924747237745,
+            "pcw": 0.8769677061558807
+        },
+        {
+            "model": "Qwen3.5-0.8B",
+            "words_count": 23441,
+            "tokens_count": 89915,
+            "fertility": 3.835800520455612,
+            "pcw": 0.8812337357621262
         }
     ],
     "tam_Taml": [
@@ -1298,13 +1522,6 @@
             "pcw": 0.8375472825004977
         },
         {
-            "model": "tiny-aya",
-            "words_count": 10046,
-            "tokens_count": 70846,
-            "fertility": 7.052160063706948,
-            "pcw": 0.8374477403941868
-        },
-        {
             "model": "tiny-aya-fire",
             "words_count": 10046,
             "tokens_count": 70846,
@@ -1333,11 +1550,46 @@
             "pcw": 0.839737208839339
         },
         {
-            "model": "Sarvam-30B",
+            "model": "Sarvam-33B",
             "words_count": 10046,
             "tokens_count": 28759,
             "fertility": 2.862731435397173,
             "pcw": 0.7761298029066295
+        },
+        {
+            "model": "Phi-4-mini",
+            "words_count": 10046,
+            "tokens_count": 36327,
+            "fertility": 3.6160660959585904,
+            "pcw": 0.8223173402349194
+        },
+        {
+            "model": "Phi-3.5 mini",
+            "words_count": 10046,
+            "tokens_count": 96371,
+            "fertility": 9.592972327294445,
+            "pcw": 0.8442166036233326
+        },
+        {
+            "model": "GLM-4.6V",
+            "words_count": 10046,
+            "tokens_count": 109730,
+            "fertility": 10.922755325502688,
+            "pcw": 0.8376468246068087
+        },
+        {
+            "model": "Kimi-VL-A3B-Thinking-2506",
+            "words_count": 10046,
+            "tokens_count": 63342,
+            "fertility": 6.305196097949433,
+            "pcw": 0.8371491140752538
+        },
+        {
+            "model": "Qwen3.5-0.8B",
+            "words_count": 10046,
+            "tokens_count": 42374,
+            "fertility": 4.2179972128210235,
+            "pcw": 0.8363527772247661
         }
     ],
     "ory_Orya": [
@@ -1447,13 +1699,6 @@
             "pcw": 0.8866315832415453
         },
         {
-            "model": "tiny-aya",
-            "words_count": 24513,
-            "tokens_count": 229906,
-            "fertility": 9.378941785991106,
-            "pcw": 0.8283359849875577
-        },
-        {
             "model": "tiny-aya-fire",
             "words_count": 24513,
             "tokens_count": 229906,
@@ -1482,11 +1727,46 @@
             "pcw": 0.829437441357647
         },
         {
-            "model": "Sarvam-30B",
+            "model": "Sarvam-33B",
             "words_count": 24513,
             "tokens_count": 57263,
             "fertility": 2.336025782237996,
             "pcw": 0.6481458817770163
+        },
+        {
+            "model": "Phi-4-mini",
+            "words_count": 24513,
+            "tokens_count": 134447,
+            "fertility": 5.484722392200057,
+            "pcw": 0.8254395626810264
+        },
+        {
+            "model": "Phi-3.5 mini",
+            "words_count": 24513,
+            "tokens_count": 378320,
+            "fertility": 15.433443478970343,
+            "pcw": 0.8851221800677191
+        },
+        {
+            "model": "GLM-4.6V",
+            "words_count": 24513,
+            "tokens_count": 354218,
+            "fertility": 14.450210092603925,
+            "pcw": 0.8857341002733243
+        },
+        {
+            "model": "Kimi-VL-A3B-Thinking-2506",
+            "words_count": 24513,
+            "tokens_count": 182086,
+            "fertility": 7.428140170521764,
+            "pcw": 0.8277240647819525
+        },
+        {
+            "model": "Qwen3.5-0.8B",
+            "words_count": 24513,
+            "tokens_count": 113908,
+            "fertility": 4.646840452005058,
+            "pcw": 0.8217680414473952
         }
     ]
 }

@@ -73,4 +73,6 @@ model_id = [
     ("Phi-4-mini", "microsoft/Phi-4-mini-instruct", HFTokenizer),
     ("Phi-3.5 mini", "microsoft/Phi-3.5-mini-instruct", HFTokenizer),
     ("GLM-4.6V", "zai-org/GLM-4.6V-Flash", HFTokenizer),
+    ("Kimi-VL-A3B-Thinking-2506", "moonshotai/Kimi-VL-A3B-Thinking-2506", HFTokenizer),
+    ("Qwen3.5-0.8B", "Qwen/Qwen3.5-0.8B", HFTokenizer),
 ]
