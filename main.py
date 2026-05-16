@@ -1,5 +1,4 @@
 import json
-from pathlib import Path
 from src.data.models import model_id
 from typing import List
 

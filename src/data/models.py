@@ -69,10 +69,11 @@ model_id = [
     ("TWO-sutra-mlt256", "TWO/sutra-mlt256-v2", HFTokenizer),
     ("Param2-17B-MOE", "bharatgenai/Param2-17B-A2.4B-Thinking", HFTokenizer),
     ("Krutrim-2", "krutrim-ai-labs/Krutrim-2-instruct", HFTokenizer),
-    ("Sarvam-33B", "sarvamai/sarvam-30b", HFTokenizer),
+    ("Sarvam-30B", "sarvamai/sarvam-30b", HFTokenizer),
     ("Phi-4-mini", "microsoft/Phi-4-mini-instruct", HFTokenizer),
     ("Phi-3.5 mini", "microsoft/Phi-3.5-mini-instruct", HFTokenizer),
     ("GLM-4.6V", "zai-org/GLM-4.6V-Flash", HFTokenizer),
     ("Kimi-VL-A3B-Thinking-2506", "moonshotai/Kimi-VL-A3B-Thinking-2506", HFTokenizer),
     ("Qwen3.5-0.8B", "Qwen/Qwen3.5-0.8B", HFTokenizer),
+    ("SmolLM 3", "HuggingFaceTB/SmolLM3-3B", HFTokenizer),
 ]

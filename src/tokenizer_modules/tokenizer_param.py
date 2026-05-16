@@ -1,4 +1,3 @@
-from pathlib import Path
 from transformers import AutoTokenizer
 from typing import List
 from src.data.utils import vocabulary_path
