@@ -260998,5 +260998,15 @@
   "260996": " bkg",
   "260997": " boda",
   "260998": " boks",
-  "260999": " bosom"
+  "260999": " bosom",
+  "261000": "<|START_RESPONSE|>",
+  "261001": "<|END_RESPONSE|>",
+  "261002": "<|START_ACTION|>",
+  "261003": "<|END_ACTION|>",
+  "261004": "<|START_TOOL_RESULT|>",
+  "261005": "<|END_TOOL_RESULT|>",
+  "261006": "<|START_THINKING|>",
+  "261007": "<|END_THINKING|>",
+  "261008": "<SEP>",
+  "261009": "<CLS>"
 }
