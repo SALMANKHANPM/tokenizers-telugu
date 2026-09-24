@@ -134,7 +134,7 @@
             "pcw": 0.7224151502523498
         },
         {
-            "model": "Sarvam-33B",
+            "model": "Sarvam-30B",
             "words_count": 43194,
             "tokens_count": 102898,
             "fertility": 2.3822290132888826,
@@ -174,6 +174,20 @@
             "tokens_count": 159387,
             "fertility": 3.6900263925545214,
             "pcw": 0.7553595406769459
+        },
+        {
+            "model": "SmolLM 3",
+            "words_count": 43194,
+            "tokens_count": 431862,
+            "fertility": 9.998194193638005,
+            "pcw": 0.7610547761263139
+        },
+        {
+            "model": "IFM K2 Horizon 7B",
+            "words_count": 43194,
+            "tokens_count": 211447,
+            "fertility": 4.895286382367922,
+            "pcw": 0.7602907811270084
         }
     ],
     "ben_Beng": [
@@ -311,7 +325,7 @@
             "pcw": 0.7962095679957981
         },
         {
-            "model": "Sarvam-33B",
+            "model": "Sarvam-30B",
             "words_count": 22847,
             "tokens_count": 48038,
             "fertility": 2.102595526765002,
@@ -351,6 +365,20 @@
             "tokens_count": 80070,
             "fertility": 3.5046176740928785,
             "pcw": 0.8018558235216877
+        },
+        {
+            "model": "SmolLM 3",
+            "words_count": 22847,
+            "tokens_count": 167497,
+            "fertility": 7.331246990852191,
+            "pcw": 0.8380093666564538
+        },
+        {
+            "model": "IFM K2 Horizon 7B",
+            "words_count": 22847,
+            "tokens_count": 56506,
+            "fertility": 2.473234998030376,
+            "pcw": 0.7104652689631024
         }
     ],
     "guj_Gujr": [
@@ -488,7 +516,7 @@
             "pcw": 0.8185261164588922
         },
         {
-            "model": "Sarvam-33B",
+            "model": "Sarvam-30B",
             "words_count": 12674,
             "tokens_count": 29461,
             "fertility": 2.3245226447845986,
@@ -528,6 +556,20 @@
             "tokens_count": 49150,
             "fertility": 3.878017989584977,
             "pcw": 0.8014833517437273
+        },
+        {
+            "model": "SmolLM 3",
+            "words_count": 12674,
+            "tokens_count": 113156,
+            "fertility": 8.928199463468518,
+            "pcw": 0.8456682973015622
+        },
+        {
+            "model": "IFM K2 Horizon 7B",
+            "words_count": 12674,
+            "tokens_count": 76111,
+            "fertility": 6.005286413129241,
+            "pcw": 0.8454315922360739
         }
     ],
     "hin_Deva": [
@@ -665,7 +707,7 @@
             "pcw": 0.6611750077712154
         },
         {
-            "model": "Sarvam-33B",
+            "model": "Sarvam-30B",
             "words_count": 3217,
             "tokens_count": 5794,
             "fertility": 1.8010568852968605,
@@ -705,6 +747,20 @@
             "tokens_count": 8666,
             "fertility": 2.6938141125271993,
             "pcw": 0.7050046627292509
+        },
+        {
+            "model": "SmolLM 3",
+            "words_count": 3217,
+            "tokens_count": 9285,
+            "fertility": 2.886229406279142,
+            "pcw": 0.8302766552688841
+        },
+        {
+            "model": "IFM K2 Horizon 7B",
+            "words_count": 3217,
+            "tokens_count": 6051,
+            "fertility": 1.8809449797948399,
+            "pcw": 0.46565122785203605
         }
     ],
     "kan_Knda": [
@@ -842,7 +898,7 @@
             "pcw": 0.8294965610376559
         },
         {
-            "model": "Sarvam-33B",
+            "model": "Sarvam-30B",
             "words_count": 31841,
             "tokens_count": 86969,
             "fertility": 2.7313526585220314,
@@ -882,6 +938,20 @@
             "tokens_count": 149027,
             "fertility": 4.680349235262711,
             "pcw": 0.8261047077667159
+        },
+        {
+            "model": "SmolLM 3",
+            "words_count": 31841,
+            "tokens_count": 398819,
+            "fertility": 12.525328978361232,
+            "pcw": 0.8397349329480858
+        },
+        {
+            "model": "IFM K2 Horizon 7B",
+            "words_count": 31841,
+            "tokens_count": 228404,
+            "fertility": 7.1732671712571845,
+            "pcw": 0.8377877579221759
         }
     ],
     "mal_Mlym": [
@@ -1019,7 +1089,7 @@
             "pcw": 0.8318784351762043
         },
         {
-            "model": "Sarvam-33B",
+            "model": "Sarvam-30B",
             "words_count": 6186,
             "tokens_count": 20092,
             "fertility": 3.2479793081150987,
@@ -1059,6 +1129,20 @@
             "tokens_count": 31839,
             "fertility": 5.146944713870029,
             "pcw": 0.8283220174587779
+        },
+        {
+            "model": "SmolLM 3",
+            "words_count": 6186,
+            "tokens_count": 83633,
+            "fertility": 13.519721952796637,
+            "pcw": 0.8297769156159069
+        },
+        {
+            "model": "IFM K2 Horizon 7B",
+            "words_count": 6186,
+            "tokens_count": 20388,
+            "fertility": 3.2958292919495635,
+            "pcw": 0.7698027804720337
         }
     ],
     "mar_Deva": [
@@ -1196,7 +1280,7 @@
             "pcw": 0.6882619484302513
         },
         {
-            "model": "Sarvam-33B",
+            "model": "Sarvam-30B",
             "words_count": 18538,
             "tokens_count": 40126,
             "fertility": 2.164526917682598,
@@ -1236,6 +1320,20 @@
             "tokens_count": 56565,
             "fertility": 3.051300032365951,
             "pcw": 0.6895026432193333
+        },
+        {
+            "model": "SmolLM 3",
+            "words_count": 18538,
+            "tokens_count": 61546,
+            "fertility": 3.319991369079728,
+            "pcw": 0.7201963534361852
+        },
+        {
+            "model": "IFM K2 Horizon 7B",
+            "words_count": 18538,
+            "tokens_count": 46671,
+            "fertility": 2.517585500053943,
+            "pcw": 0.6404682274247492
         }
     ],
     "pan_Guru": [
@@ -1373,7 +1471,7 @@
             "pcw": 0.8221065654195641
         },
         {
-            "model": "Sarvam-33B",
+            "model": "Sarvam-30B",
             "words_count": 23441,
             "tokens_count": 47905,
             "fertility": 2.043641482871891,
@@ -1413,6 +1511,20 @@
             "tokens_count": 89915,
             "fertility": 3.835800520455612,
             "pcw": 0.8812337357621262
+        },
+        {
+            "model": "SmolLM 3",
+            "words_count": 23441,
+            "tokens_count": 174499,
+            "fertility": 7.4441790026022785,
+            "pcw": 0.8872488375069323
+        },
+        {
+            "model": "IFM K2 Horizon 7B",
+            "words_count": 23441,
+            "tokens_count": 145372,
+            "fertility": 6.201612559191161,
+            "pcw": 0.8872061772108698
         }
     ],
     "tam_Taml": [
@@ -1550,7 +1662,7 @@
             "pcw": 0.839737208839339
         },
         {
-            "model": "Sarvam-33B",
+            "model": "Sarvam-30B",
             "words_count": 10046,
             "tokens_count": 28759,
             "fertility": 2.862731435397173,
@@ -1590,6 +1702,20 @@
             "tokens_count": 42374,
             "fertility": 4.2179972128210235,
             "pcw": 0.8363527772247661
+        },
+        {
+            "model": "SmolLM 3",
+            "words_count": 10046,
+            "tokens_count": 109685,
+            "fertility": 10.918275930718695,
+            "pcw": 0.8375472825004977
+        },
+        {
+            "model": "IFM K2 Horizon 7B",
+            "words_count": 10046,
+            "tokens_count": 53843,
+            "fertility": 5.359645630101533,
+            "pcw": 0.83675094565001
         }
     ],
     "ory_Orya": [
@@ -1727,7 +1853,7 @@
             "pcw": 0.829437441357647
         },
         {
-            "model": "Sarvam-33B",
+            "model": "Sarvam-30B",
             "words_count": 24513,
             "tokens_count": 57263,
             "fertility": 2.336025782237996,
@@ -1767,6 +1893,20 @@
             "tokens_count": 113908,
             "fertility": 4.646840452005058,
             "pcw": 0.8217680414473952
+        },
+        {
+            "model": "SmolLM 3",
+            "words_count": 24513,
+            "tokens_count": 348344,
+            "fertility": 14.210582140088933,
+            "pcw": 0.8280504222249419
+        },
+        {
+            "model": "IFM K2 Horizon 7B",
+            "words_count": 24513,
+            "tokens_count": 181079,
+            "fertility": 7.387059927385469,
+            "pcw": 0.8244196956716844
         }
     ]
 }
