@@ -51,8 +51,8 @@ class HFTokenizer:
 
     def get_vocabulary(self) -> dict[int, str]:
         return {
-            i: self.decode([i], skip_special_tokens=False)
-            for i in range(self.tokenizer.vocab_size)
+            token_id: self.decode([token_id], skip_special_tokens=False)
+            for token_id in sorted(self.tokenizer.get_vocab().values())
         }
 
     def save_vocabulary(self):

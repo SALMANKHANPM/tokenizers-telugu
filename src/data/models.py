@@ -76,4 +76,5 @@ model_id = [
     ("Kimi-VL-A3B-Thinking-2506", "moonshotai/Kimi-VL-A3B-Thinking-2506", HFTokenizer),
     ("Qwen3.5-0.8B", "Qwen/Qwen3.5-0.8B", HFTokenizer),
     ("SmolLM 3", "HuggingFaceTB/SmolLM3-3B", HFTokenizer),
+    ("IFM K2 Horizon 7B", "IFM/K2-Horizon-7B", HFTokenizer),
 ]
