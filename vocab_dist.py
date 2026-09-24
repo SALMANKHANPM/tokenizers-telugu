@@ -4,6 +4,7 @@ from pathlib import Path
 from tqdm import tqdm
 
 from src.data.utils import vocabulary_path
+from src.evaluation.tokenizer_eval import evaluate_tokenizers
 from src.lid.lid_unicode import UnicodeLanguageIdentifier
 
 
@@ -39,11 +40,17 @@ class VocabDist:
         print(f"  {'TOTAL':<15} {total:>7,}")
 
 
-if __name__ == "__main__":
+def main() -> None:
     for file in tqdm(sorted(vocabulary_path.absolute().iterdir())):
         if file.is_file() and file.suffix == ".json" and "filtered" not in file.name:
             print(f"\n=== {file.name} ===")
-            vd = VocabDist(file)
-            vd.filter_vocab()
-            vd.save_filtered_vocab()
-            vd.print_summary()
+            vocab_distribution = VocabDist(file)
+            vocab_distribution.filter_vocab()
+            vocab_distribution.save_filtered_vocab()
+            vocab_distribution.print_summary()
+
+    evaluate_tokenizers()
+
+
+if __name__ == "__main__":
+    main()

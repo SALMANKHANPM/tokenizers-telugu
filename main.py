@@ -1,6 +1,9 @@
 import json
-from src.data.models import model_id
 from typing import List
+
+from src.data.models import model_id
+from src.evaluation.tokenizer_eval import evaluate_tokenizers
+
 
 class TokenizerFactory:
     @classmethod
@@ -12,23 +15,25 @@ class TokenizerFactory:
                 print("Tokenizer class: ", tokenizer_class.__name__)
                 return tokenizer_class.get_instance(model_path)
         raise ValueError(f"Tokenizer not found for model: {model_name}")
-    
+
     def __init__(self, model_name: str):
         self.tokenizer = self.get_tokenizer(model_name)
         self.tokenizers = []
-        
+
     def encode(self, text: str):
         return self.tokenizer.encode(text)
-    
+
     def decode(self, token_ids: List[int]):
         return self.tokenizer.decode(token_ids)
-    
-    
+
     @classmethod
     def get_all_tokenizers(cls):
-        cls.tokenizers = [tokenizer_class.get_instance(model_path) for model, model_path, tokenizer_class in model_id]
+        cls.tokenizers = [
+            tokenizer_class.get_instance(model_path)
+            for model, model_path, tokenizer_class in model_id
+        ]
         return cls.tokenizers
-    
+
     def save_vocabulary(self):
         with open(self.save_path, "w") as f:
             json.dump(self.tokenizer.vocab, f, indent=2, ensure_ascii=False)
@@ -37,13 +42,12 @@ class TokenizerFactory:
     def save_all_vocabulary(cls):
         for tokenizer in cls.get_all_tokenizers():
             tokenizer.save_vocabulary()
-    
-if __name__ == "__main__":
-    # TokenizerFactory.get_all_tokenizers()
-    # tokenizer = TokenizerFactory.get_tokenizer(model_name="mistral_sp")
-    # tokenizer.save_all_vocabulary()
-    # tokens = tokenizer.encode("ఎలా టైపు చెయ్యాలో వివరంగా తెలుసుకోండి, Hello, how are you?")
-    # for token in tokens:
-    #     print(tokenizer.decode([token]), token)
-    
+
+
+def main() -> None:
     TokenizerFactory.save_all_vocabulary()
+    evaluate_tokenizers()
+
+
+if __name__ == "__main__":
+    main()
